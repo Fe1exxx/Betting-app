@@ -1,6 +1,6 @@
 /* Font poppins */
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /* Reset and base styles  */
 * {
@@ -117,17 +117,45 @@ input[type="file"] {
 
 /* End of resetting styles */
 
-header{
-    display: flex;
-    justify-content: space-between;
-    margin: 16px 32px 8px 32px;
-    align-items: center;
+/* Button Bet Now */
+.button-betNow {
+  width: 100%;
+  max-width: 382px;
+  height: 60px;
+  border-radius: 100px;
+  text-align: center;
+  color: #fcfdfe;
+  background-color: #ff7d34;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 120%;
 }
 
-.header-section{
-    display: flex;
-    align-items: center;
-    gap: 12px;
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 16px 32px 8px 32px;
+  align-items: center;
+}
+
+
+.header-desktop__ul > li > a:hover{
+  color: #FF7D34;
+}
+
+.header-desktop_btnBetNow{
+  background-color: #FDF0EA;
+  color: #FF7D34;
+}
+
+.header-desktop {
+  display: none;
+}
+
+.header-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .header-section__logo {
@@ -144,26 +172,159 @@ header{
   font-size: 18px;
 }
 
-.header-section__title{
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 130%;
-    text-transform: uppercase;
-    color: #1C2132;
+.header-section__title {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 130%;
+  text-transform: uppercase;
+  color: #1c2132;
 }
 
-.header-navMobile{
-    height: 25px ;
+.header-navMobile {
+  height: 25px;
 }
 
-.header-burgerMenu{
-    width: 32px;
-    height: 3px;
-    background-color: #75767F;
-    border-radius: 5px;
-    margin-bottom: 8px;
+.header-burgerMenu {
+  width: 32px;
+  height: 3px;
+  background-color: #75767f;
+  border-radius: 5px;
+  margin-bottom: 8px;
 }
 
-.header-burgerMenu:nth-child(3){
-    margin-bottom: 0px;
+.header-burgerMenu:nth-child(3) {
+  margin-bottom: 0px;
+}
+
+.header-desktop__ul {
+  display: flex;
+  align-items: center;
+  gap: 39px;
+}
+
+.header-desktop__ul > li > a {
+  color: #75767f;
+}
+
+h1 {
+  font-size: 3.25rem;
+  line-height: 160%;
+  font-family: "Inter", Courier, monospace;
+  font-weight: bold;
+  line-height: 130%;
+  margin-bottom: 24px;
+  color: #191b23;
+}
+
+.header-desktop_btnBetNow {
+  display: none;
+}
+
+.main-h1Section__h1 {
+  max-width: 322px;
+}
+
+p {
+  color: #75767f;
+  font-weight: 500;
+  font-family: "Inter", Courier, monospace;
+  line-height: 160%;
+}
+
+main {
+  padding: 24px;
+}
+
+.main-firstArticle {
+  margin: 0 auto;
+  align-items: center;
+}
+
+.main-firstArticle__imgMan {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.main-h1Section {
+  margin: 0 auto;
+  max-width: 382px;
+}
+
+.main-h1Section__p {
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-family: "Inter", Courier, monospace;
+  font-size: 18px;
+  line-height: 160%;
+}
+
+.main-h1Section__button {
+  margin-bottom: 32px;
+}
+
+.main-h1Section__users {
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  main,
+  header {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 24px 32px;
+  }
+
+  header {
+    height: 92px;
+    margin-top: 24px;
+  }
+
+  .button-betNow {
+    max-width: 256px;
+  }
+
+  .main-firstArticle {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+
+  .main-h1Section__h1 {
+    max-width: none;
+    font-size: 4rem;
+  }
+
+  .main-h1Section {
+    max-width: 672px;
+    margin: 0;
+  }
+
+  .main-firstArticle__imgMan {
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .main-h1Section__p {
+    max-width: 620px;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .header-desktop {
+    display: flex;
+  }
+
+  .header-navMobile {
+    display: none;
+  }
+
+  .header-desktop_btnBetNow {
+    display: block;
+  }
+
+  .header-desktop_btnBetNow{
+    max-width: 186px;
+  }
 }

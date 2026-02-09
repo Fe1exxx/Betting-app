@@ -759,8 +759,9 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 64px 24px;
-  background-color: #F3F4F5;
+  background-color: #f3f4f5;
   border-radius: 32px;
+  margin-bottom: 48px;
 }
 
 .features-image {
@@ -848,6 +849,351 @@ body {
 }
 
 /* ============================================
+   REVIEWS SECTION
+   ============================================ */
+.reviews-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+
+.reviews-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.reviews-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #191b23;
+}
+
+.reviews-nav {
+  display: flex;
+  gap: 12px;
+}
+
+.reviews-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #e0e0e0;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #191b23;
+  transition: all 0.2s;
+}
+
+.reviews-arrow:hover {
+  background: #f5f5f5;
+}
+
+/* Swiper */
+.reviews-swiper {
+  overflow: visible;
+}
+
+.reviews-swiper .swiper-wrapper {
+  align-items: stretch !important;
+}
+
+.reviews-swiper .swiper-slide {
+  height: auto !important;
+  display: flex;
+}
+
+/* Review Card */
+.review-card {
+  background: #f5f5f5;
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-card__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.review-card__avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.review-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.review-card__name {
+  font-family: "Inter", monospace;
+  font-size: 16px;
+  font-weight: 600;
+  color: #191b23;
+}
+
+.review-card__stars {
+  display: flex;
+  gap: 4px;
+}
+
+.review-card__stars span {
+  color: #ff7d34;
+  font-size: 14px;
+}
+
+.review-card__stars .star-empty {
+  color: #e0e0e0;
+}
+
+.review-card__text {
+  font-family: "Inter", monospace;
+  font-size: 14px;
+  line-height: 160%;
+  color: #75767f;
+  flex: 1;
+}
+
+/* ============================================
+   DOWNLOAD SECTION (Brands)
+   ============================================ */
+.download-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 24px;
+  text-align: center;
+}
+
+.download-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #191b23;
+  margin-bottom: 32px;
+  line-height: 130%;
+  text-align: left;
+}
+
+/* Brands scroll container */
+.brands-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.brands-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.brands-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 16px;
+  width: max-content; /* Важно! Для scroll */
+  padding: 0 24px;
+}
+
+.brand-item {
+  flex-shrink: 0;
+  width: 140px;
+  height: 80px;
+  background: #f5f5f5;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.brand-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: all 0.3s;
+}
+
+.brand-item:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Desktop - 2 rows grid */
+@media screen and (min-width: 768px) {
+  .download-section {
+    padding: 100px 32px;
+  }
+
+  .download-title {
+    font-size: 52px;
+  }
+
+  .brands-scroll {
+    overflow-x: visible;
+  }
+
+  .brands-track {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    width: 100%;
+    max-width: 900px;
+    padding: 0;
+  }
+
+  .brand-item {
+    width: auto;
+    height: 100px;
+  }
+}
+
+/* ============================================
+   APP INFO SECTION (Black Table)
+   ============================================ */
+.app-info-section {
+  width: 100%;
+  padding: 64px 16px;
+  background: #0a0a0a;
+}
+
+.app-info-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app-info-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: left;
+  margin-bottom: 32px;
+}
+
+/* Wrapper для скругления и фона */
+.info-table-wrapper {
+  background: #141414;
+  border-radius: 24px;
+  padding: 24px;
+}
+
+/* Table scroll container */
+.info-table-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.info-table-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.info-table {
+  min-width: 600px;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  background: #0f0f0f;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  gap: 16px;
+}
+
+.info-row:last-child {
+  margin-bottom: 0;
+}
+
+.info-label {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #a0a0a0;
+  flex-shrink: 0;
+  width: 120px;
+}
+
+.info-value {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff;
+  flex: 1;
+  text-align: left;
+}
+
+.info-number {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666666;
+  flex-shrink: 0;
+  width: 24px;
+  text-align: right;
+}
+
+/* Desktop */
+@media screen and (min-width: 768px) {
+  .app-info-section {
+    padding: 100px 32px;
+  }
+
+  .app-info-title {
+    font-size: 42px;
+    margin-bottom: 48px;
+  }
+
+  .info-table-wrapper {
+    padding: 32px;
+    border-radius: 32px;
+  }
+
+  .info-table {
+    min-width: auto;
+  }
+
+  .info-row {
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    border-radius: 16px;
+  }
+
+  .info-label {
+    font-size: 16px;
+    width: 140px;
+  }
+
+  .info-value {
+    font-size: 16px;
+  }
+
+  .info-number {
+    font-size: 16px;
+  }
+}
+
+/* ============================================
    MEDIA QUERIES (Tablet & Desktop)
    ============================================ */
 @media screen and (min-width: 768px) {
@@ -928,8 +1274,9 @@ body {
 
   .matches-section,
   .bonus,
-  .reasons-section {
-    margin-bottom: 100px;
+  .reasons-section,
+  .features-section {
+    margin-bottom: 50px;
   }
 
   .reasons-section {
@@ -949,7 +1296,22 @@ body {
     text-align: center;
   }
 
-  
+  .reviews-section {
+    padding: 100px 32px;
+  }
+
+  .reviews-title {
+    font-size: 52px;
+  }
+
+  .review-card {
+    padding: 32px;
+  }
+
+  .review-card__avatar {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 @media screen and (min-width: 1150px) {
@@ -1043,6 +1405,10 @@ body {
 
   .features-title {
     font-size: 52px;
+  }
+
+  .reasons-section {
+    padding: 52px 64px;
   }
 
   .features-text {

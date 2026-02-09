@@ -83,3 +83,33 @@ document.querySelectorAll('.reasons-item__toggle').forEach(btn => {
     btn.textContent = btn.textContent === '+' ? '−' : '+';
   });
 });
+
+
+
+
+
+
+
+
+
+const reviewsSwiper = new Swiper('.reviews-swiper', {
+  slidesPerView: 1,
+  spaceBetween: 24,
+  grabCursor: true,
+  
+  navigation: {
+    nextEl: '.reviews-arrow--next',
+    prevEl: '.reviews-arrow--prev',
+  },
+  
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 24,
+    },
+    1024: {
+      slidesPerView: 2.5,
+      spaceBetween: 32,
+    }
+  }
+});

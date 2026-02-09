@@ -19,7 +19,6 @@
   box-sizing: border-box;
 }
 
-/* Links */
 a,
 a:link,
 a:visited {
@@ -30,7 +29,6 @@ a:hover {
   text-decoration: none;
 }
 
-/* Common */
 aside,
 nav,
 footer,
@@ -71,7 +69,6 @@ address {
   font-style: normal;
 }
 
-/* Form */
 input,
 textarea,
 button,
@@ -200,7 +197,6 @@ header {
   color: #1c2132;
 }
 
-/* Mobile nav */
 .header-navMobile {
   height: 25px;
   display: flex;
@@ -221,7 +217,6 @@ header {
   margin-bottom: 0;
 }
 
-/* Desktop nav (hidden by default) */
 .header-desktop {
   display: none;
 }
@@ -258,7 +253,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Исправлено: центрирование изображения на мобильном */
 .main-firstArticle__imgMan {
   margin-bottom: 32px;
   display: flex;
@@ -297,6 +291,9 @@ body {
   margin-bottom: 16px;
 }
 
+/* ============================================
+   TABLE OF CONTENTS
+   ============================================ */
 .table-of-contents {
   max-width: 1200px;
   margin: 0 auto;
@@ -320,11 +317,10 @@ body {
   margin-bottom: 24px;
 }
 
-/* Mobile — flex с переносом */
 .table-of-contents__grid {
   display: flex;
   gap: 20px;
-  max-height: 100px; /* ограничиваем высоту для 2 рядов */
+  max-height: 100px;
 }
 
 .table-of-contents__item {
@@ -350,7 +346,7 @@ body {
 }
 
 /* ============================================
-   INDIAN PREMIER LEAGUE SECTION (Carousel)
+   IPL SECTION (Carousel)
    ============================================ */
 .ipl-section {
   padding: 48px 32px;
@@ -366,34 +362,32 @@ body {
 }
 
 .ipl-carousel__track {
-  display: flex; /* flex вместо grid */
-  flex-wrap: nowrap; /* запрещаем перенос */
-  gap: 0; /* без gap между слайдами */
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0;
   transition: transform 0.3s ease;
   will-change: transform;
 }
 
 .ipl-carousel__slide {
-  flex: 0 0 100%; /* каждый слайд = 100% ширины */
-  min-width: 100%; /* фикс для Safari */
+  flex: 0 0 100%;
+  min-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  padding: 0 16px; /* отступы по бокам */
+  padding: 0 16px;
   box-sizing: border-box;
 }
 
-/* Картинка */
 .ipl-carousel__image {
   width: 100%;
   max-width: 280px;
   height: auto;
 }
 
-/* Контент */
 .ipl-carousel__content {
-  text-align: left; /* как в Figma — текст слева */
+  text-align: left;
   width: 100%;
 }
 
@@ -413,7 +407,6 @@ body {
   max-width: 660px;
 }
 
-/* Навигация */
 .ipl-carousel__nav {
   display: flex;
   justify-content: center;
@@ -469,7 +462,7 @@ body {
 }
 
 /* ============================================
-   MATCHES SECTION (Swiper)
+   MATCHES SECTION
    ============================================ */
 .matches-section {
   max-width: 1200px;
@@ -510,21 +503,19 @@ body {
   transition: all 0.2s;
 }
 
-/* Swiper — важные фиксы для высоты */
 .matches-swiper {
   overflow: visible;
 }
 
 .matches-swiper .swiper-wrapper {
-  align-items: stretch !important; /* растягиваем все слайды */
+  align-items: stretch !important;
 }
 
 .matches-swiper .swiper-slide {
-  height: auto !important; /* сброс дефолтной высоты */
-  display: flex; /* для растягивания карточки */
+  height: auto !important;
+  display: flex;
 }
 
-/* Карточка матча */
 .match-card {
   background: #f5f5f5;
   border-radius: 16px;
@@ -533,7 +524,7 @@ body {
   min-width: 280px;
   display: flex;
   flex-direction: column;
-  height: 100%; /* растягиваем на всю высоту слайда */
+  height: 100%;
 }
 
 .match-card__stadium {
@@ -543,7 +534,7 @@ body {
   color: #191b23;
   margin-bottom: 4px;
   line-height: 1.4;
-  min-height: 40px; /* фиксируем минимальную высоту */
+  min-height: 40px;
 }
 
 .match-card__date {
@@ -598,7 +589,6 @@ body {
   margin: 4px 0;
 }
 
-/* Кнопка всегда внизу */
 .match-card__button {
   width: 100%;
   height: 48px;
@@ -610,7 +600,7 @@ body {
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  margin-top: auto; /* прижимаем к низу */
+  margin-top: auto;
   transition: transform 0.2s;
 }
 
@@ -618,6 +608,9 @@ body {
   transform: scale(1.02);
 }
 
+/* ============================================
+   BONUS SECTION
+   ============================================ */
 .bonus {
   padding: 48px 24px;
   margin: 0 24px;
@@ -626,6 +619,7 @@ body {
   border-radius: 32px;
   margin-bottom: 48px;
 }
+
 .bonusH2 {
   margin-bottom: 24px;
   font-size: 32px;
@@ -895,7 +889,6 @@ body {
   background: #f5f5f5;
 }
 
-/* Swiper */
 .reviews-swiper {
   overflow: visible;
 }
@@ -907,41 +900,47 @@ body {
 .reviews-swiper .swiper-slide {
   height: auto !important;
   display: flex;
+  width: auto;
 }
 
-/* Review Card */
+/* Review Card - Wide Style */
 .review-card {
   background: #f5f5f5;
-  border-radius: 16px;
-  padding: 24px;
+  border-radius: 20px;
+  padding: 20px;
   width: 100%;
   display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: stretch;
+  min-width: 600px;
+}
+
+.review-card__avatar {
+  width: 272px;
+  height: 320px;
+  border-radius: 16px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.review-card__content {
+  display: flex;
   flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  justify-content: center;
 }
 
 .review-card__header {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-.review-card__avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-.review-card__info {
-  display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
 }
 
 .review-card__name {
-  font-family: "Inter", monospace;
-  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
   font-weight: 600;
   color: #191b23;
 }
@@ -953,7 +952,7 @@ body {
 
 .review-card__stars span {
   color: #ff7d34;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .review-card__stars .star-empty {
@@ -961,15 +960,14 @@ body {
 }
 
 .review-card__text {
-  font-family: "Inter", monospace;
-  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
   line-height: 160%;
   color: #75767f;
-  flex: 1;
 }
 
 /* ============================================
-   DOWNLOAD SECTION (Brands)
+   DOWNLOAD SECTION
    ============================================ */
 .download-section {
   max-width: 1200px;
@@ -988,24 +986,23 @@ body {
   text-align: left;
 }
 
-/* Brands scroll container */
 .brands-scroll {
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .brands-scroll::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
 .brands-track {
   display: flex;
   flex-wrap: nowrap;
   gap: 16px;
-  width: max-content; /* Важно! Для scroll */
+  width: max-content;
   padding: 0 24px;
 }
 
@@ -1035,37 +1032,8 @@ body {
   opacity: 1;
 }
 
-/* Desktop - 2 rows grid */
-@media screen and (min-width: 768px) {
-  .download-section {
-    padding: 100px 32px;
-  }
-
-  .download-title {
-    font-size: 52px;
-  }
-
-  .brands-scroll {
-    overflow-x: visible;
-  }
-
-  .brands-track {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    width: 100%;
-    max-width: 900px;
-    padding: 0;
-  }
-
-  .brand-item {
-    width: auto;
-    height: 100px;
-  }
-}
-
 /* ============================================
-   APP INFO SECTION (Black Table)
+   APP INFO SECTION
    ============================================ */
 .app-info-section {
   width: 100%;
@@ -1088,14 +1056,12 @@ body {
   margin-bottom: 32px;
 }
 
-/* Wrapper для скругления и фона */
 .info-table-wrapper {
   background: #141414;
   border-radius: 24px;
   padding: 24px;
 }
 
-/* Table scroll container */
 .info-table-scroll {
   overflow-x: auto;
   overflow-y: hidden;
@@ -1154,51 +1120,10 @@ body {
   text-align: right;
 }
 
-/* Desktop */
-@media screen and (min-width: 768px) {
-  .app-info-section {
-    padding: 100px 32px;
-  }
-
-  .app-info-title {
-    font-size: 42px;
-    margin-bottom: 48px;
-  }
-
-  .info-table-wrapper {
-    padding: 32px;
-    border-radius: 32px;
-  }
-
-  .info-table {
-    min-width: auto;
-  }
-
-  .info-row {
-    padding: 20px 24px;
-    margin-bottom: 16px;
-    border-radius: 16px;
-  }
-
-  .info-label {
-    font-size: 16px;
-    width: 140px;
-  }
-
-  .info-value {
-    font-size: 16px;
-  }
-
-  .info-number {
-    font-size: 16px;
-  }
-}
-
 /* ============================================
-   MEDIA QUERIES (Tablet & Desktop)
+   MEDIA QUERIES
    ============================================ */
 @media screen and (min-width: 768px) {
-  /* Layout */
   main,
   header {
     max-width: 1340px;
@@ -1211,8 +1136,6 @@ body {
     margin-top: 24px;
   }
 
-  /* Hero section */
-
   .main-h1Section__h1 {
     max-width: none;
     font-size: 4rem;
@@ -1222,10 +1145,10 @@ body {
     max-width: 620px;
   }
 
-  /* Buttons */
   .button-betNow {
     max-width: 256px;
   }
+
   .main-h1Section__users {
     display: flex;
     gap: 16px;
@@ -1306,17 +1229,80 @@ body {
   }
 
   .review-card {
-    padding: 32px;
+    padding: 24px;
+    min-width: 700px;
   }
 
   .review-card__avatar {
     width: 272px;
     height: 320px;
   }
+
+  .download-section {
+    padding: 100px 32px;
+  }
+
+  .download-title {
+    font-size: 52px;
+  }
+
+  .brands-scroll {
+    overflow-x: visible;
+  }
+
+  .brands-track {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    width: 100%;
+    max-width: 900px;
+    padding: 0;
+  }
+
+  .brand-item {
+    width: auto;
+    height: 100px;
+  }
+
+  .app-info-section {
+    padding: 100px 32px;
+  }
+
+  .app-info-title {
+    font-size: 42px;
+    margin-bottom: 48px;
+  }
+
+  .info-table-wrapper {
+    padding: 32px;
+    border-radius: 32px;
+  }
+
+  .info-table {
+    min-width: auto;
+  }
+
+  .info-row {
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    border-radius: 16px;
+  }
+
+  .info-label {
+    font-size: 16px;
+    width: 140px;
+  }
+
+  .info-value {
+    font-size: 16px;
+  }
+
+  .info-number {
+    font-size: 16px;
+  }
 }
 
 @media screen and (min-width: 1150px) {
-  /* Show desktop nav */
   .header-desktop {
     display: flex;
   }
@@ -1336,7 +1322,6 @@ body {
     margin-bottom: 0;
   }
 
-  /* Image container - сброс flex для десктопа */
   .main-firstArticle__imgMan {
     margin: 0;
     overflow: hidden;
@@ -1419,7 +1404,21 @@ body {
   .features-item {
     font-size: 16px;
   }
+
   .table-of-contents {
     overflow-x: hidden;
+  }
+}
+
+/* Mobile Reviews */
+@media screen and (max-width: 767px) {
+  .review-card {
+    flex-direction: column;
+    min-width: 320px;
+  }
+
+  .review-card__avatar {
+    width: 100%;
+    height: 200px;
   }
 }

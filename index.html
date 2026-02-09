@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Betting App</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <header>
@@ -33,7 +37,7 @@
     <main>
       <article class="main-firstArticle">
         <section class="main-firstArticle__imgMan">
-          <img src="IMG/mainMan.png" alt="a man" />
+          <img src="IMG/mainMan.png" alt="a man" style="border-radius: 24px" />
         </section>
         <section class="main-h1Section">
           <h1 class="main-h1Section__h1">Best IPL Betting App</h1>
@@ -135,11 +139,11 @@
         </section>
       </article>
 
-      <article class="main-firstArticle">
+      <article class="main-firstArticle" style="justify-content: space-between">
         <section class="main-firstArticle__imgMan">
-          <img src="IMG/phone 2.png" alt="a man" />
+          <img src="IMG/phone 2.png" alt="a man" style="border-radius: 24px" />
         </section>
-        <section class="main-h1Section">
+        <section class="main-h1Section widthMax">
           <h2 class="main-IPLH2">IPL Win Betting App Download</h2>
           <p class="main-h1Section__p main-IPLP" style="margin-bottom: 32px">
             With our app, you can watch live broadcasts and receive countless
@@ -149,14 +153,300 @@
             comprehensive and a more user-friendly app for Android and iOS.
             Explore the app and you will find many useful features.
           </p>
-          <section class="img-GoogleApple">
-            <img src="IMG/Google Play.png" alt="Google play" />
-            <img src="IMG/App Store.png" alt="Apple" />
+          <section style="display: flex; gap: 20px" class="gapUp">
+            <button>
+              <img
+                src="IMG/Google Play.png"
+                alt="Google play"
+                style="width: 200px"
+              />
+            </button>
+            <button>
+              <img src="IMG/App Store.png" alt="Apple" style="width: 200px" />
+            </button>
           </section>
         </section>
       </article>
+
+      <section class="matches-section">
+        <div class="matches-header">
+          <h2 class="matches-title">IPL Live Cricket Betting</h2>
+          <div class="matches-nav">
+            <button class="matches-arrow matches-arrow--prev">←</button>
+            <button class="matches-arrow matches-arrow--next">→</button>
+          </div>
+        </div>
+
+        <div class="swiper matches-swiper">
+          <div class="swiper-wrapper">
+            <!-- Карточка 1 -->
+            <div class="swiper-slide">
+              <div class="match-card">
+                <div class="match-card__stadium">
+                  Rajiv Gandhi International Stadium, Hyderabad
+                </div>
+                <div class="match-card__date">
+                  Sunday, May 19 · 17:30 pm IST
+                </div>
+
+                <div class="match-card__teams">
+                  <div class="match-card__team">
+                    <img
+                      src="IMG/kings.png"
+                      alt="Sunrisers"
+                      class="match-card__logo"
+                    />
+                    <div class="match-card__team-name">Sunrisers Hyderabad</div>
+                    <div class="match-card__odds">(19.1 OV)</div>
+                  </div>
+
+                  <div class="match-card__vs">VS</div>
+
+                  <div class="match-card__team">
+                    <img
+                      src="IMG/kings.png"
+                      alt="Rajasthan"
+                      class="match-card__logo"
+                    />
+                    <div class="match-card__team-name">Rajasthan Royals</div>
+                    <div class="match-card__odds">(19.1 OV)</div>
+                  </div>
+                </div>
+
+                <button class="match-card__button">Bet Now</button>
+              </div>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="swiper-slide">
+              <div class="match-card">
+                <div class="match-card__stadium">Wankhede Stadium, Mumbai</div>
+                <div class="match-card__date">
+                  Monday, May 20 · 20:30 pm IST
+                </div>
+
+                <div class="match-card__teams">
+                  <div class="match-card__team">
+                    <img
+                      src="IMG/kings.png"
+                      alt="Mumbai"
+                      class="match-card__logo"
+                    />
+                    <div class="match-card__team-name">Mumbai Indians</div>
+                    <div class="match-card__odds">(19.1 OV)</div>
+                  </div>
+
+                  <div class="match-card__vs">VS</div>
+
+                  <div class="match-card__team">
+                    <img
+                      src="IMG/kings.png"
+                      alt="Kolkata"
+                      class="match-card__logo"
+                    />
+                    <div class="match-card__team-name">
+                      Kolkata Knight Riders
+                    </div>
+                    <div class="match-card__odds">(19.1 OV)</div>
+                  </div>
+                </div>
+
+                <button class="match-card__button">Bet Now</button>
+              </div>
+            </div>
+
+            <!-- Карточка 3 -->
+            <div class="swiper-slide">
+              <div class="match-card">
+                <div class="match-card__stadium">Wankhede Stadium, Mumbai</div>
+                <div class="match-card__date">
+                  Monday, May 20 · 20:30 pm IST
+                </div>
+
+                <div class="match-card__teams">
+                  <div class="match-card__team">
+                    <img
+                      src="IMG/kings.png"
+                      alt="Mumbai"
+                      class="match-card__logo"
+                    />
+                    <div class="match-card__team-name">Mumbai Indians</div>
+                    <div class="match-card__odds">(19.1 OV)</div>
+                  </div>
+
+                  <div class="match-card__vs">VS</div>
+
+                  <div class="match-card__team">
+                    <img
+                      src="IMG/kings.png"
+                      alt="Kolkata"
+                      class="match-card__logo"
+                    />
+                    <div class="match-card__team-name">
+                      Kolkata Knight Riders
+                    </div>
+                    <div class="match-card__odds">(19.1 OV)</div>
+                  </div>
+                </div>
+
+                <button class="match-card__button">Bet Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bonus">
+        <h2 style="color: white" class="bonusH2">Welcome Bonus</h2>
+        <p class="bonusP">
+          The IPL betting app offers a user-friendly mobile interface that
+          allows users to place bets anytime, anywhere. Enjoy features like
+          secure transactions, detailed match statistics and personalized
+          notifications for an immersive and hassle-free betting experience on
+          the go.
+        </p>
+        <article class="blocks">
+          <div class="bonusSection">
+            <div class="bgImgRounded imgBonus">
+              <img src="IMG/Money.png" alt="Money" class="imgBonus" />
+            </div>
+            <h3 style="color: #fcfdfe; font-weight: 700">
+              Received 10 free spins
+            </h3>
+            <p>
+              Get started with a free bet worth $10 upon registration! No
+              deposit required. Start winning today!
+            </p>
+          </div>
+          <div class="bonusSection">
+            <div class="bgImgRounded imgBonus">
+              <img src="IMG/gift.png" alt="gift" class="imgBonus" />
+            </div>
+            <h3 style="color: #fcfdfe; font-weight: 700">
+              Deposit of 100 dollars
+            </h3>
+            <p>
+              Make your first deposit of $100 and unlock a 100% match bonus.
+              Boost your money into IPL betting action!
+            </p>
+          </div>
+          <div class="bonusSection">
+            <div class="bgImgRounded imgBonus">
+              <img
+                src="IMG/Circle money.png"
+                alt="Circle Money"
+                class="imgBonus"
+              />
+            </div>
+            <h3 style="color: #fcfdfe; font-weight: 700">
+              50% Bonus on First Deposit
+            </h3>
+            <p>
+              Enjoy a 50% bonus on your initial deposit up to $200. Maximize
+              your first bet of IPL betting!
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section class="reasons-section">
+        <h2 class="reasons-title">Reasons to Download IPL App</h2>
+
+        <div class="reasons-list">
+          <!-- Item 1 -->
+          <div class="reasons-item">
+            <div class="reasons-item__header">
+              <h3 class="reasons-item__title">
+                Cricket Betting App without your browser
+              </h3>
+              <button class="reasons-item__toggle">+</button>
+            </div>
+            <p class="reasons-item__text">
+              You can place the bets and see the result with just a few touches.
+              Just open the app, select the match, choose your players, and
+              start gambling. It is super easy.
+            </p>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="reasons-item">
+            <div class="reasons-item__header">
+              <h3 class="reasons-item__title">Only Phone Needed</h3>
+              <button class="reasons-item__toggle">+</button>
+            </div>
+            <p class="reasons-item__text">
+              Download the app free on the Google Play Store or AppStore and you
+              are ready to go. All you need is just a smartphone. You don't need
+              a laptop.
+            </p>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="reasons-item">
+            <div class="reasons-item__header">
+              <h3 class="reasons-item__title">Easy to track your balance</h3>
+              <button class="reasons-item__toggle">+</button>
+            </div>
+            <p class="reasons-item__text">
+              Download, install, and open the app. Inside, you will find all the
+              stats, tips, and match predictions. You can track and make those
+              winning decisions easily.
+            </p>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="reasons-item">
+            <div class="reasons-item__header">
+              <h3 class="reasons-item__title">Bets at any time</h3>
+              <button class="reasons-item__toggle">+</button>
+            </div>
+            <p class="reasons-item__text">
+              You can place your bets and see the outcome anytime you want and
+              from anywhere. It is super convenient. Betting on your favorite
+              cricket game is sure to be thoroughly enjoyable.
+            </p>
+          </div>
+        </div>
+
+        <button class="reasons-button">Learn More</button>
+      </section>
+
+      <article class="features-section">
+        <section class="features-image">
+          <img src="IMG/features.png" alt="App features" />
+        </section>
+
+        <div class="features-content">
+          <h2 class="features-title">IPL mobile app features</h2>
+          <p class="features-text">
+            The IPL betting app offers a user-friendly mobile interface that
+            allows users to place bets anytime, anywhere. Enjoy features like
+            secure transactions, detailed match statistics and personalized
+            notifications for an immersive and hassle-free betting experience on
+            the go.
+          </p>
+
+          <ul class="features-list">
+            <li class="features-item">
+              <span class="features-check">✓</span>
+              You can place bets on IPL games. You can also play casino games.
+            </li>
+            <li class="features-item">
+              <span class="features-check">✓</span>
+              It offers cricket tips, stats, and predictions.
+            </li>
+            <li class="features-item">
+              <span class="features-check">✓</span>
+              There is customer support for your convenience.
+            </li>
+          </ul>
+
+          <button class="features-button">Bet Now</button>
+        </div>
+      </article>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
   </body>
 </html>

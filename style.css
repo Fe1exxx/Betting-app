@@ -254,8 +254,8 @@ main {
   padding: 24px;
 }
 
-.main-firstArticle {
-  margin: 0 auto;
+body {
+  overflow-x: hidden;
 }
 
 /* Исправлено: центрирование изображения на мобильном */
@@ -264,7 +264,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 .main-firstArticle__imgMan img {
@@ -274,6 +273,7 @@ main {
 
 .main-h1Section {
   margin: 0 auto;
+  margin-bottom: 48px;
   max-width: 382px;
 }
 
@@ -468,15 +468,384 @@ main {
   max-width: 660px;
 }
 
-
-.img-GoogleApple{
-  display: flex; 
-  max-width: 150px; 
-  gap: 21.4px;
+/* ============================================
+   MATCHES SECTION (Swiper)
+   ============================================ */
+.matches-section {
+  max-width: 1200px;
+  padding: 0 24px;
+  margin-bottom: 48px;
 }
 
+.matches-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
 
+.matches-title {
+  font-family: "Inter", monospace;
+  font-size: 32px;
+  font-weight: 700;
+  color: #191b23;
+}
 
+.matches-nav {
+  display: flex;
+  gap: 12px;
+}
+
+.matches-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #e0e0e0;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+/* Swiper — важные фиксы для высоты */
+.matches-swiper {
+  overflow: visible;
+}
+
+.matches-swiper .swiper-wrapper {
+  align-items: stretch !important; /* растягиваем все слайды */
+}
+
+.matches-swiper .swiper-slide {
+  height: auto !important; /* сброс дефолтной высоты */
+  display: flex; /* для растягивания карточки */
+}
+
+/* Карточка матча */
+.match-card {
+  background: #f5f5f5;
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* растягиваем на всю высоту слайда */
+}
+
+.match-card__stadium {
+  font-family: "Inter", monospace;
+  font-size: 14px;
+  font-weight: 600;
+  color: #191b23;
+  margin-bottom: 4px;
+  line-height: 1.4;
+  min-height: 40px; /* фиксируем минимальную высоту */
+}
+
+.match-card__date {
+  font-family: "Inter", monospace;
+  font-size: 12px;
+  color: #75767f;
+  margin-bottom: 20px;
+}
+
+.match-card__teams {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.match-card__team {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.match-card__logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.match-card__team-name {
+  font-family: "Inter", monospace;
+  font-size: 14px;
+  font-weight: 600;
+  color: #191b23;
+  flex: 1;
+}
+
+.match-card__odds {
+  font-family: "Inter", monospace;
+  font-size: 12px;
+  color: #75767f;
+  flex-shrink: 0;
+}
+
+.match-card__vs {
+  font-family: "Inter", monospace;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ff7d34;
+  text-align: center;
+  margin: 4px 0;
+}
+
+/* Кнопка всегда внизу */
+.match-card__button {
+  width: 100%;
+  height: 48px;
+  background: #ff7d34;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  font-family: "Inter", monospace;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: auto; /* прижимаем к низу */
+  transition: transform 0.2s;
+}
+
+.match-card__button:hover {
+  transform: scale(1.02);
+}
+
+.bonus {
+  padding: 48px 24px;
+  margin: 0 24px;
+  background-color: #120e0b;
+  text-align: center;
+  border-radius: 32px;
+  margin-bottom: 48px;
+}
+.bonusH2 {
+  margin-bottom: 24px;
+  font-size: 32px;
+}
+
+.bonusP {
+  margin-bottom: 48px;
+}
+
+.bonusSection {
+  max-width: 334px;
+  height: 289px;
+  background-color: #161412;
+  margin: 0 auto;
+  margin-bottom: 24px;
+  border-radius: 24px;
+  text-align: center;
+  padding: 36px;
+}
+
+.imgBonus {
+  margin: 0 auto;
+}
+
+.bgImgRounded {
+  background-color: #120e0b;
+  border-radius: 50%;
+  height: 72px;
+  width: 72px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+/* ============================================
+   REASONS SECTION
+   ============================================ */
+.reasons-section {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 64px 52px;
+  background: #f5f5f5;
+  border-radius: 32px;
+  text-align: center;
+}
+
+.reasons-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  text-align: left;
+  font-weight: 700;
+  color: #191b23;
+  margin-bottom: 32px;
+}
+
+.reasons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.reasons-item {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: left;
+}
+
+.reasons-item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.reasons-item__title {
+  font-family: "Inter", monospace;
+  font-size: 18px;
+  font-weight: 600;
+  color: #191b23;
+}
+
+.reasons-item__toggle {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: none;
+  font-size: 24px;
+  color: #191b23;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reasons-item__text {
+  font-family: "Inter", monospace;
+  font-size: 14px;
+  line-height: 160%;
+  color: #75767f;
+  max-width: 800px;
+}
+
+.reasons-button {
+  width: 140px;
+  height: 48px;
+  background: #ff7d34;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  font-family: "Inter", monospace;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.reasons-button:hover {
+  transform: scale(1.05);
+}
+
+/* ============================================
+   FEATURES SECTION
+   ============================================ */
+.features-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 24px;
+  background-color: #F3F4F5;
+  border-radius: 32px;
+}
+
+.features-image {
+  width: 100%;
+  max-width: 400px;
+}
+
+.features-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  display: block;
+}
+
+.features-content {
+  width: 100%;
+  max-width: 600px;
+}
+
+.features-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #191b23;
+  margin-bottom: 16px;
+  line-height: 130%;
+}
+
+.features-text {
+  font-family: "Inter", monospace;
+  font-size: 14px;
+  line-height: 160%;
+  color: #75767f;
+  margin-bottom: 24px;
+}
+
+.features-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.features-item {
+  font-family: "Inter", monospace;
+  font-size: 14px;
+  line-height: 160%;
+  color: #75767f;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.features-check {
+  width: 20px;
+  height: 20px;
+  background: #191b23;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.features-button {
+  width: 100%;
+  max-width: 200px;
+  height: 48px;
+  background: #ff7d34;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  font-family: "Inter", monospace;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.features-button:hover {
+  transform: scale(1.02);
+}
 
 /* ============================================
    MEDIA QUERIES (Tablet & Desktop)
@@ -496,19 +865,6 @@ main {
   }
 
   /* Hero section */
-  .main-firstArticle {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0;
-  }
-
-  .main-h1Section {
-    max-width: 672px;
-    margin: 0;
-    margin-right: 12px;
-  }
 
   .main-h1Section__h1 {
     max-width: none;
@@ -517,20 +873,6 @@ main {
 
   .main-h1Section__p {
     max-width: 620px;
-  }
-
-  /* Image container - сброс flex для десктопа */
-  .main-firstArticle__imgMan {
-    margin: 0;
-    overflow: hidden;
-    flex-shrink: 0;
-  }
-
-  .main-firstArticle__imgMan img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
   }
 
   /* Buttons */
@@ -543,15 +885,28 @@ main {
   }
 
   .main-secondArticle {
+    display: flex;
     flex-direction: row;
     background-color: #f3f4f5;
-    display: flex;
     justify-content: center;
-    width: 100vw; /* на всю ширину viewport */
-    margin-left: calc(-50vw + 50%); /* компенсация контейнера */
-    padding: 64px 32px; /* отступы как в Figma */
+    align-items: center;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding: 64px 32px;
     box-sizing: border-box;
     margin-bottom: 100px;
+    gap: 80px;
+  }
+
+  .main-secondArticle .main-firstArticle__imgMan {
+    order: 2;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .main-secondArticle .ipl-section {
+    order: 1;
+    margin: 0;
   }
 
   .main-secondh1Section {
@@ -567,16 +922,69 @@ main {
     margin-bottom: 100px;
   }
 
-  .img-GoogleApple{
-  gap: 40px;
-   max-width: 250px; 
-}
+  .matches-title {
+    font-size: 52px;
+  }
+
+  .matches-section,
+  .bonus,
+  .reasons-section {
+    margin-bottom: 100px;
+  }
+
+  .reasons-section {
+    padding: 32px 24px;
+    border-radius: 24px;
+  }
+
+  .reasons-title {
+    font-size: 32px;
+  }
+
+  .reasons-item__title {
+    font-size: 16px;
+  }
+
+  .reasons-title {
+    text-align: center;
+  }
+
+  
 }
 
 @media screen and (min-width: 1150px) {
   /* Show desktop nav */
   .header-desktop {
     display: flex;
+  }
+
+  .main-firstArticle {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 100px;
+  }
+
+  .main-h1Section {
+    max-width: 672px;
+    margin: 0;
+    margin-right: 12px;
+    margin-bottom: 0;
+  }
+
+  /* Image container - сброс flex для десктопа */
+  .main-firstArticle__imgMan {
+    margin: 0;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .main-firstArticle__imgMan img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
   }
 
   .header-navMobile {
@@ -603,5 +1011,45 @@ main {
 
   .main-IPLH2 {
     font-size: 52px;
+  }
+
+  .bonusH2 {
+    margin-top: 100px;
+    font-size: 52px;
+  }
+
+  .blocks {
+    display: flex;
+    gap: 20px;
+  }
+
+  .features-section {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+    padding: 100px 32px;
+  }
+
+  .features-image {
+    max-width: 500px;
+    flex: 0 0 45%;
+  }
+
+  .features-content {
+    flex: 0 0 45%;
+    max-width: 500px;
+  }
+
+  .features-title {
+    font-size: 52px;
+  }
+
+  .features-text {
+    font-size: 16px;
+  }
+
+  .features-item {
+    font-size: 16px;
   }
 }

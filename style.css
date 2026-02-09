@@ -1071,6 +1071,7 @@ body {
   width: 100%;
   padding: 64px 16px;
   background: #0a0a0a;
+  border-radius: 32px;
 }
 
 .app-info-container {
@@ -1309,8 +1310,8 @@ body {
   }
 
   .review-card__avatar {
-    width: 80px;
-    height: 80px;
+    width: 272px;
+    height: 320px;
   }
 }
 
@@ -1417,5 +1418,8 @@ body {
 
   .features-item {
     font-size: 16px;
+  }
+  .table-of-contents {
+    overflow-x: hidden;
   }
 }

@@ -10,7 +10,6 @@
   padding: 0;
   margin: 0;
   border: none;
-  font-family: Poppins, sans-serif;
 }
 
 *,
@@ -49,8 +48,7 @@ p {
   font-weight: inherit;
 }
 
-ul,
-ul li {
+ul {
   list-style: none;
 }
 
@@ -263,7 +261,6 @@ header {
   right: 0;
 }
 
-/* Overlay backdrop */
 .header-mobile-menu::before {
   content: "";
   position: fixed;
@@ -280,23 +277,6 @@ header {
 .header-mobile-menu.active::before {
   opacity: 1;
   pointer-events: auto;
-}
-
-.header-mobile-menu__close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  background: none;
-  border: none;
-  font-size: 32px;
-  color: #1c2132;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
 }
 
 .header-mobile-menu__ul {
@@ -328,7 +308,7 @@ header {
 
 /* ============================================
        DESKTOP MENU
-       ============================================ */
+      ============================================ */
 .header-desktop {
   display: none;
 }
@@ -358,17 +338,6 @@ header {
 /* ============================================
        BUTTON STYLES
        ============================================ */
-.button-betNow {
-  background-color: #ff7d34;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
 
 .button-betNow:hover {
   background-color: #e66a22;
@@ -379,8 +348,6 @@ header {
        DESKTOP BREAKPOINT
        ============================================ */
 @media (min-width: 1200px) {
-
-
   .header-mobile-menu {
     display: none;
   }
@@ -392,13 +359,8 @@ header {
   .header-burger {
     display: none;
   }
-
-  .header-desktop_btnBetNow {
-    display: block;
-  }
 }
 
-/* Prevent body scroll when menu is open */
 body.menu-open {
   overflow: hidden;
 }
@@ -412,44 +374,152 @@ main {
 
 body {
   overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ============================================
+   HERO ARTICLE — ИСПРАВЛЕННЫЙ АДАПТИВ
+   ============================================ */
+.main-firstArticle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 48px;
 }
 
 .main-firstArticle__imgMan {
-  margin-bottom: 32px;
+  width: 100%;
+  max-width: 382px;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 24px;
+  overflow: hidden;
 }
 
 .main-firstArticle__imgMan img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
+  display: block;
+  border-radius: 24px;
 }
 
 .main-h1Section {
-  margin: 0 auto;
-  margin-bottom: 48px;
+  text-align: center;
   max-width: 382px;
 }
 
 .main-h1Section__h1 {
-  max-width: 350px;
+  font-size: 2.25rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 16px;
+  color: #191b23;
 }
 
 .main-h1Section__p {
   margin-bottom: 24px;
   font-weight: 500;
-  font-family: "Inter", monospace;
-  font-size: 18px;
-  line-height: 160%;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #75767f;
 }
 
 .main-h1Section__button {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .main-h1Section__users {
-  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.main-h1Section__users img {
+  width: 120px;
+  height: auto;
+}
+
+/* DESKTOP: текст слева, изображение справа */
+@media (min-width: 768px) {
+  .main-firstArticle {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 64px;
+    margin-bottom: 100px;
+  }
+
+  .main-h1Section {
+    text-align: left;
+    max-width: 620px;
+    flex: 1;
+  }
+
+  .main-h1Section__h1 {
+    font-size: 3.25rem;
+  }
+
+  .main-h1Section__p {
+    font-size: 18px;
+  }
+
+  .main-h1Section__users {
+    flex-direction: row;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .main-h1Section__users img {
+    width: 140px;
+  }
+
+  .main-firstArticle__imgMan {
+    width: 50%;
+    max-width: 500px;
+    flex-shrink: 0;
+    height: auto;
+  }
+
+  .main-firstArticle__imgMan img {
+    width: 88%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 3 / 4;
+  }
+}
+
+@media (min-width: 1150px) {
+  .main-firstArticle {
+    gap: 80px;
+  }
+
+  .main-firstArticle__imgMan {
+    max-width: 580px;
+  }
+
+  .main-h1Section {
+    max-width: 672px;
+  }
+}
+
+@media screen and (min-width: 467px) {
+  .main__imgMan {
+    border-radius: 24px;
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 667px) {
+  .main__imgMan {
+    border-radius: 24px;
+    width: 60%;
+  }
 }
 
 /* ============================================
@@ -607,6 +677,8 @@ body {
 .main-secondArticle {
   background-color: #f3f4f5;
   margin-bottom: 48px;
+  padding: 24px;
+  border-radius: 32px;
 }
 
 .main-IPLH2 {
@@ -912,7 +984,6 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 32px;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 64px 24px;
   background-color: #f3f4f5;
@@ -987,7 +1058,6 @@ body {
 
 .features-button {
   width: 100%;
-  max-width: 200px;
   height: 48px;
   background: #ff7d34;
   color: white;
@@ -1014,44 +1084,6 @@ body {
   padding: 64px 24px;
 }
 
-.reviews-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 32px;
-}
-
-.reviews-title {
-  font-family: "Poppins", sans-serif;
-  font-size: 32px;
-  font-weight: 700;
-  color: #191b23;
-}
-
-.reviews-nav {
-  display: flex;
-  gap: 12px;
-}
-
-.reviews-arrow {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid #e0e0e0;
-  background: white;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  color: #191b23;
-  transition: all 0.2s;
-}
-
-.reviews-arrow:hover {
-  background: #f5f5f5;
-}
-
 /* Swiper настройки */
 .reviews-swiper {
   overflow: visible;
@@ -1067,7 +1099,6 @@ body {
   width: auto;
 }
 
-/* Карточка — твои стили */
 .review-card {
   background: #f5f5f5;
   border-radius: 20px;
@@ -1075,7 +1106,7 @@ body {
   display: flex;
   flex-direction: row;
   gap: 16px;
-  width: 500px; /* фиксированная ширина для слайда */
+  width: 500px;
 }
 
 .review-card__avatar {
@@ -1120,7 +1151,6 @@ body {
   color: #75767f;
 }
 
-/* Мобильный — текст снизу */
 @media screen and (max-width: 767px) {
   .review-card {
     flex-direction: column;
@@ -1137,7 +1167,6 @@ body {
    DOWNLOAD SECTION
    ============================================ */
 .download-section {
-  max-width: 1200px;
   margin: 0 auto;
   padding: 64px 24px;
   text-align: center;
@@ -1306,13 +1335,12 @@ body {
   margin-bottom: 32px;
 }
 
-/* Карточка */
 .howToArticle {
   background: white;
   border-radius: 20px;
   padding: 24px;
   display: flex;
-  flex-direction: column; /* мобильный: вертикально */
+  flex-direction: column;
   gap: 24px;
   margin-bottom: 24px;
 }
@@ -1321,7 +1349,6 @@ body {
   margin-bottom: 0;
 }
 
-/* Картинка */
 .howToArticle__image {
   display: flex;
   justify-content: center;
@@ -1336,7 +1363,6 @@ body {
   height: auto;
 }
 
-/* Контент */
 .howToArticle__content {
   display: flex;
   flex-direction: column;
@@ -1370,26 +1396,29 @@ body {
   border: none;
   cursor: pointer;
   margin: 0 auto;
+
+  .footer-container__last {
+    margin-bottom: 100px;
+  }
 }
 
 /* Desktop */
 @media screen and (min-width: 768px) {
   .howToArticle {
-    flex-direction: row; /* в ряд */
+    flex-direction: row;
     align-items: center;
     padding: 32px;
   }
 
   .howToArticle__image {
-    flex: 0 0 40%; /* 40% ширины */
+    flex: 0 0 40%;
     max-width: 300px;
   }
 
   .howToArticle__content {
-    flex: 1; /* остальное место */
+    flex: 1;
   }
 
-  /* Реверс - картинка справа */
   .howToArticle--reverse .howToArticle__image {
     order: 2;
   }
@@ -1405,12 +1434,7 @@ body {
   .howTo {
     margin-bottom: 100px;
   }
-}
 
-/* ============================================
-   MEDIA QUERIES
-   ============================================ */
-@media screen and (min-width: 768px) {
   main,
   header {
     max-width: 1340px;
@@ -1421,6 +1445,10 @@ body {
   header {
     height: 92px;
     margin-top: 24px;
+  }
+
+  .reasons-section{
+    margin-bottom: 100px;
   }
 
   .main-h1Section__h1 {
@@ -1438,17 +1466,21 @@ body {
 
   .main-h1Section__users {
     display: flex;
+    object-fit: contain;
     gap: 16px;
+  }
+
+  .main-h1Section__h1 {
+    font-size: 2rem;
   }
 
   .main-secondArticle {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     background-color: #f3f4f5;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
+    max-width: 1340px;
     padding: 64px 32px;
     box-sizing: border-box;
     margin-bottom: 100px;
@@ -1461,14 +1493,13 @@ body {
     flex-shrink: 0;
   }
 
+  .features-button {
+  max-width: 200px;
+}
+
   .main-secondArticle .ipl-section {
     order: 1;
     margin: 0;
-  }
-
-  .main-secondh1Section {
-    margin: 0;
-    margin-left: 80px;
   }
 
   .table-of-contents {
@@ -1509,10 +1540,6 @@ body {
 
   .reviews-section {
     padding: 100px 32px;
-  }
-
-  .reviews-title {
-    font-size: 52px;
   }
 
   .review-card__avatar {
@@ -1588,37 +1615,12 @@ body {
     padding: 34px;
   }
 
-  .reviews-nav {
-    display: flex;
-  }
-
-  .howToAside {
-    display: flex;
-    justify-content: space-between;
+  .features-section {
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-  }
-
-  .howToAside__AsideH3 {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 130%;
-  }
-
-  .howToAside__Aside {
-    margin-left: 80px;
-    max-width: 576px;
-    height: fit-content;
-  }
-
-  .howTo__asideBetNow {
-    max-width: 256px;
-  }
-
-  .hotToIMG {
-    margin: 0;
-    width: 100%;
-    object-fit: contain;
+    gap: 64px;
+    padding: 100px 32px;
   }
 }
 
@@ -1627,46 +1629,15 @@ body {
     display: flex;
   }
 
-  .main-firstArticle {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    gap: 0;
-    margin-bottom: 100px;
+  .header-desktop_btnBetNow {
+    display: block;
+    max-width: 186px;
   }
-
   .main-h1Section {
     max-width: 672px;
     margin: 0;
     margin-right: 12px;
     margin-bottom: 0;
-  }
-
-  .main-firstArticle__imgMan {
-    margin: 0;
-    overflow: hidden;
-    flex-shrink: 0;
-  }
-
-  .main-firstArticle__imgMan img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-  }
-
-  .header-navMobile {
-    display: none;
-  }
-
-  .header-desktop_btnBetNow {
-    display: block;
-    max-width: 186px;
-  }
-
-  .main-firstArticle__imgMan {
-    width: 500px;
-    height: 600px;
   }
 
   .table-of-contents__title {
@@ -1689,14 +1660,6 @@ body {
   .blocks {
     display: flex;
     gap: 20px;
-  }
-
-  .features-section {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 64px;
-    padding: 100px 32px;
   }
 
   .features-image {
@@ -1729,7 +1692,7 @@ body {
     overflow-x: hidden;
   }
 
-  .header-burger{
+  .header-burger {
     display: none;
   }
 }
@@ -1745,18 +1708,17 @@ footer {
 
 .footer-container {
   max-width: 1340px;
-  margin: 0 auto; /* Центрирование */
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 16px;
   margin-top: 39px;
 }
 
-/* Top row: Social слева, Nav справа */
 .footer-top {
   display: flex;
   align-items: end;
-  justify-content: space-between; /* Левый блок слева, правый справа */
+  justify-content: space-between;
   gap: 24px;
 }
 
@@ -1769,10 +1731,10 @@ footer {
 }
 
 .footer-social__link {
-  width: 32px; /* Размер круга как в Figma */
+  width: 32px;
   height: 32px;
-  background: #000; /* Чёрный фон */
-  border-radius: 50%; /* Круг */
+  background: #000;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1787,18 +1749,17 @@ footer {
 }
 
 .footer-social__link img {
-  width: 16px; /* Размер иконки внутри */
+  width: 16px;
   height: 16px;
   object-fit: contain;
-  filter: brightness(0) saturate(100%) invert(100%); /* Белая иконка */
+  filter: brightness(0) saturate(100%) invert(100%);
 }
 
-/* Navigation - две строки, прижаты к правому краю */
 .footer-nav {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  align-items: flex-end; /* Прижимаем строки навигации к правому краю */
+  align-items: flex-end;
 }
 
 .footer-nav-row {
@@ -1806,7 +1767,7 @@ footer {
   align-items: center;
   gap: 32px;
   flex-wrap: wrap;
-  justify-content: flex-end; /* Ссылки внутри строки тоже справа */
+  justify-content: flex-end;
 }
 
 .footer-nav__link {
@@ -1819,26 +1780,6 @@ footer {
 
 .footer-nav__link:hover {
   color: #ff7d34;
-}
-
-/* Bottom row: Текст слева, копирайт справа */
-.footer-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Левый текст слева, копирайт справа */
-  gap: 24px;
-}
-
-.footer-text {
-  display: block;
-  color: #75767f;
-  font-size: 14px;
-}
-
-.footer-copyright {
-  color: #75767f;
-  font-size: 14px;
-  white-space: nowrap;
 }
 
 /* ============================================

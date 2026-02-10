@@ -1,50 +1,65 @@
- // Mobile menu functionality
-    const burger = document.querySelector('.header-burger');
-    const mobileMenu = document.querySelector('.header-mobile-menu');
-    const closeBtn = document.querySelector('.header-mobile-menu__close');
-    const menuLinks = document.querySelectorAll('.header-mobile-menu__ul a');
-    const body = document.body;
+// Mobile menu functionality
+const burger = document.querySelector('.header-burger');
+const mobileMenu = document.querySelector('.header-mobile-menu');
+const menuLinks = document.querySelectorAll('.header-mobile-menu__ul li a');
+const betNowBtn = document.querySelector('.header-mobile-menu__btn');
+const body = document.body;
 
-    function openMenu() {
-      burger.classList.add('active');
-      mobileMenu.classList.add('active');
-      body.classList.add('menu-open');
+// Защита (на будущее)
+if (!burger || !mobileMenu) {
+  console.warn('Mobile menu elements not found');
+} else {
+  function openMenu() {
+    burger.classList.add('active');
+    mobileMenu.classList.add('active');
+    body.classList.add('menu-open');
+  }
+
+  function closeMenu() {
+    burger.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    body.classList.remove('menu-open');
+  }
+
+  // Бургер
+  burger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (mobileMenu.classList.contains('active')) {
+      closeMenu();
+    } else {
+      openMenu();
     }
+  });
 
-    function closeMenu() {
-      burger.classList.remove('active');
-      mobileMenu.classList.remove('active');
-      body.classList.remove('menu-open');
+  // Ссылки меню
+  menuLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Кнопка Bet Now
+  if (betNowBtn) {
+    betNowBtn.addEventListener('click', closeMenu);
+  }
+
+  // Закрытие по клику вне меню или бургера
+  document.addEventListener('click', (e) => {
+    if (!mobileMenu.classList.contains('active')) return;
+
+    const clickedInsideMenu = e.target.closest('.header-mobile-menu');
+    const clickedInsideBurger = e.target.closest('.header-burger');
+
+    if (!clickedInsideMenu && !clickedInsideBurger) {
+      closeMenu();
     }
+  });
 
-    burger.addEventListener('click', () => {
-      if (mobileMenu.classList.contains('active')) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-    });
-
-    closeBtn.addEventListener('click', closeMenu);
-
-    // Close menu when clicking on links
-    menuLinks.forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
-
-    // Close menu when clicking on backdrop
-    mobileMenu.addEventListener('click', (e) => {
-      if (e.target === mobileMenu) {
-        closeMenu();
-      }
-    });
-
-    // Close menu on escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-        closeMenu();
-      }
-    });
+  // Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+      closeMenu();
+    }
+  });
+}
 
 
 

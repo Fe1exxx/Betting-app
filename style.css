@@ -115,7 +115,8 @@ input[type="file"] {
    ============================================ */
 h1 {
   font-size: 3.25rem;
-  font-family: "Inter", monospace;
+  font-family: "Poppins", sans-serif;
+
   font-weight: bold;
   line-height: 130%;
   margin-bottom: 24px;
@@ -126,7 +127,7 @@ h2 {
   font-size: 3.25rem;
   font-weight: 700;
   line-height: 130%;
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 p {
@@ -245,8 +246,7 @@ header {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 80%;
-  max-width: 320px;
+  width: 100%;
   height: 100vh;
   background: white;
   box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
@@ -480,7 +480,7 @@ body {
   }
 
   .main-firstArticle__imgMan {
-    width: 50%;
+    width: 36%;
     max-width: 500px;
     flex-shrink: 0;
     height: auto;
@@ -529,8 +529,11 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   margin-top: 48px;
-  overflow-x: scroll;
   margin-bottom: 48px;
+}
+
+.overflow {
+  overflow-y: auto;
 }
 
 .table-of-contents__title {
@@ -576,7 +579,6 @@ body {
    IPL SECTION (Carousel)
    ============================================ */
 .ipl-section {
-  padding: 48px 32px;
   max-width: 660px;
   margin: 0 auto;
   margin: 0;
@@ -603,7 +605,6 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  padding: 0 16px;
   box-sizing: border-box;
 }
 
@@ -684,6 +685,7 @@ body {
 .main-IPLH2 {
   font-size: 32px;
   margin-bottom: 24px;
+  text-align: left;
 }
 
 .main-IPLP {
@@ -749,8 +751,7 @@ body {
   background: #f5f5f5;
   border-radius: 16px;
   padding: 24px;
-  width: 100%;
-  min-width: 280px;
+  min-width: 221px;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -842,7 +843,6 @@ body {
    ============================================ */
 .bonus {
   padding: 48px 24px;
-  margin: 0 24px;
   background-color: #120e0b;
   text-align: center;
   border-radius: 32px;
@@ -921,6 +921,7 @@ body {
   border-radius: 16px;
   padding: 24px;
   text-align: left;
+  cursor: pointer;
 }
 
 .reasons-item__header {
@@ -1010,7 +1011,7 @@ body {
 
 .features-title {
   font-family: "Poppins", sans-serif;
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 700;
   color: #191b23;
   margin-bottom: 16px;
@@ -1107,6 +1108,8 @@ body {
   flex-direction: row;
   gap: 16px;
   width: 500px;
+  height: 293px;
+  overflow-y: auto;
 }
 
 .review-card__avatar {
@@ -1153,13 +1156,13 @@ body {
 
 @media screen and (max-width: 767px) {
   .review-card {
-    flex-direction: column;
+    flex-direction: row;
     width: 300px;
   }
 
   .review-card__avatar {
-    width: 100%;
-    height: 200px;
+    width: 78px;
+    height: 92px;
   }
 }
 
@@ -1317,6 +1320,8 @@ body {
   text-align: right;
 }
 
+
+
 .howTo {
   background-color: #f3f4f5;
   padding: 48px 24px;
@@ -1400,6 +1405,12 @@ body {
   .footer-container__last {
     margin-bottom: 100px;
   }
+    transition: transform 0.2s;
+
+}
+
+.howToArticle__content button:hover {
+  transform: scale(1.1);
 }
 
 /* Desktop */
@@ -1447,13 +1458,12 @@ body {
     margin-top: 24px;
   }
 
-  .reasons-section{
+  .reasons-section {
     margin-bottom: 100px;
   }
 
-  .main-h1Section__h1 {
-    max-width: none;
-    font-size: 4rem;
+  .overflow {
+    overflow-y: hidden;
   }
 
   .main-h1Section__p {
@@ -1471,7 +1481,7 @@ body {
   }
 
   .main-h1Section__h1 {
-    font-size: 2rem;
+    font-size: 4rem;
   }
 
   .main-secondArticle {
@@ -1494,19 +1504,22 @@ body {
   }
 
   .features-button {
-  max-width: 200px;
-}
+    max-width: 200px;
+  }
 
   .main-secondArticle .ipl-section {
     order: 1;
     margin: 0;
   }
 
+  .ipl-carousel__title {
+  font-size: 3.25rem;
+}
+
   .table-of-contents {
     max-width: 1200px;
     margin: 0 auto;
     margin-top: 100px;
-    overflow-x: scroll;
     margin-bottom: 100px;
   }
 
@@ -1527,7 +1540,7 @@ body {
   }
 
   .reasons-title {
-    font-size: 32px;
+    font-size: 3.25rem;
   }
 
   .reasons-item__title {
@@ -1544,7 +1557,7 @@ body {
 
   .review-card__avatar {
     width: 272px;
-    height: 320px;
+    height: -webkit-fill-available;
   }
 
   .download-section {
@@ -1622,6 +1635,11 @@ body {
     gap: 64px;
     padding: 100px 32px;
   }
+
+  .blocks {
+    display: flex;
+    gap: 20px;
+  }
 }
 
 @media screen and (min-width: 1150px) {
@@ -1649,17 +1667,12 @@ body {
   }
 
   .main-IPLH2 {
-    font-size: 52px;
+    font-size: 3.25rem;
   }
 
   .bonusH2 {
     margin-top: 100px;
-    font-size: 52px;
-  }
-
-  .blocks {
-    display: flex;
-    gap: 20px;
+    font-size: 3.25rem;
   }
 
   .features-image {
@@ -1673,7 +1686,7 @@ body {
   }
 
   .features-title {
-    font-size: 52px;
+    font-size: 3.25rem;
   }
 
   .reasons-section {

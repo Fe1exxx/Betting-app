@@ -104,29 +104,30 @@ track.addEventListener('touchend', (e) => {
 
 
 
-// Бойские
 const swiper = new Swiper('.matches-swiper', {
-  slidesPerView: 'auto',      /* автоматический подсчёт видимых */
-  spaceBetween: 24,           /* отступ между карточками */
-  grabCursor: true,           /* курсор grab */
-  
+  slidesPerView: 'auto',
+  spaceBetween: 24,
+  grabCursor: true,
+  autoHeight: true, 
+
   navigation: {
     nextEl: '.matches-arrow--next',
     prevEl: '.matches-arrow--prev',
   },
   
   breakpoints: {
-    // Mobile
     320: {
-      slidesPerView: 1.2,     /* показываем 1.2 карточки */
-      spaceBetween: 16,
+      slidesPerView: 1,
+      spaceBetween: 36,
     },
-    // Tablet
+    420: {
+      slidesPerView: 1.4,
+      spaceBetween: 36,
+    },
     768: {
       slidesPerView: 2.5,
       spaceBetween: 20,
     },
-    // Desktop
     1024: {
       slidesPerView: 3,
       spaceBetween: 24,
@@ -142,6 +143,23 @@ document.querySelectorAll('.reasons-item__toggle').forEach(btn => {
     
     text.style.display = text.style.display === 'none' ? 'block' : 'none';
     btn.textContent = btn.textContent === '+' ? '−' : '+';
+  });
+});
+
+document.querySelectorAll('.reasons-item').forEach(item => {
+  item.addEventListener('click', function (e) {
+    // Не реагируем, если кликнута ссылка или интерактивный элемент внутри
+    if (e.target.closest('.reasons-item__toggle') || e.target.tagName === 'A') return;
+
+    const text = this.querySelector('.reasons-item__text');
+    const toggleBtn = this.querySelector('.reasons-item__toggle');
+
+    // Переключаем видимость
+    const isVisible = getComputedStyle(text).display === 'block';   
+    text.style.display = isVisible ? 'none' : 'block';
+    
+    // Меняем символ в кнопке
+    toggleBtn.textContent = isVisible ? '+' : '−';
   });
 });
 

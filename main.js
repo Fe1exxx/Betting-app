@@ -1,3 +1,53 @@
+ // Mobile menu functionality
+    const burger = document.querySelector('.header-burger');
+    const mobileMenu = document.querySelector('.header-mobile-menu');
+    const closeBtn = document.querySelector('.header-mobile-menu__close');
+    const menuLinks = document.querySelectorAll('.header-mobile-menu__ul a');
+    const body = document.body;
+
+    function openMenu() {
+      burger.classList.add('active');
+      mobileMenu.classList.add('active');
+      body.classList.add('menu-open');
+    }
+
+    function closeMenu() {
+      burger.classList.remove('active');
+      mobileMenu.classList.remove('active');
+      body.classList.remove('menu-open');
+    }
+
+    burger.addEventListener('click', () => {
+      if (mobileMenu.classList.contains('active')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    closeBtn.addEventListener('click', closeMenu);
+
+    // Close menu when clicking on links
+    menuLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Close menu when clicking on backdrop
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) {
+        closeMenu();
+      }
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+        closeMenu();
+      }
+    });
+
+
+
 let currentSlide = 0;
 const track = document.getElementById('carouselTrack');
 const dots = document.querySelectorAll('.ipl-carousel__dot');
@@ -39,9 +89,7 @@ track.addEventListener('touchend', (e) => {
 
 
 
-
-
-
+// Бойские
 const swiper = new Swiper('.matches-swiper', {
   slidesPerView: 'auto',      /* автоматический подсчёт видимых */
   spaceBetween: 24,           /* отступ между карточками */
@@ -72,8 +120,6 @@ const swiper = new Swiper('.matches-swiper', {
 });
 
 
-
-
 document.querySelectorAll('.reasons-item__toggle').forEach(btn => {
   btn.addEventListener('click', () => {
     const item = btn.closest('.reasons-item');
@@ -85,31 +131,12 @@ document.querySelectorAll('.reasons-item__toggle').forEach(btn => {
 });
 
 
-
-
-
-
-
-
-
 const reviewsSwiper = new Swiper('.reviews-swiper', {
-  slidesPerView: 1,
-  spaceBetween: 24,
-  grabCursor: true,
-  
+  slidesPerView: 'auto',
+  spaceBetween: 20,
+  loop: true,
   navigation: {
     nextEl: '.reviews-arrow--next',
     prevEl: '.reviews-arrow--prev',
   },
-  
-  breakpoints: {
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 24,
-    },
-    1024: {
-      slidesPerView: 2.5,
-      spaceBetween: 32,
-    }
-  }
 });

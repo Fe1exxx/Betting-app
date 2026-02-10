@@ -163,17 +163,21 @@ p {
 /* ============================================
    HEADER
    ============================================ */
+
 header {
   display: flex;
   justify-content: space-between;
   margin: 16px 32px 8px;
   align-items: center;
+  position: relative;
+  z-index: 100;
 }
 
 .header-section {
   display: flex;
   align-items: center;
   gap: 12px;
+  text-decoration: none;
 }
 
 .header-section__logo {
@@ -197,26 +201,134 @@ header {
   color: #1c2132;
 }
 
-.header-navMobile {
-  height: 25px;
+/* ============================================
+       BURGER BUTTON
+       ============================================ */
+.header-burger {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.header-burgerMenu {
   width: 32px;
-  height: 3px;
-  background-color: #75767f;
-  border-radius: 5px;
-  margin-bottom: 8px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 6px;
+  padding: 0;
+  z-index: 1001;
 }
 
-.header-burgerMenu:nth-child(3) {
-  margin-bottom: 0;
+.header-burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #1c2132;
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
+.header-burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.header-burger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.header-burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* ============================================
+       MOBILE MENU OVERLAY
+       ============================================ */
+.header-mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 320px;
+  height: 100vh;
+  background: white;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  padding: 80px 32px 32px;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-mobile-menu.active {
+  right: 0;
+}
+
+/* Overlay backdrop */
+.header-mobile-menu::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: -100vw;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.header-mobile-menu.active::before {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.header-mobile-menu__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: #1c2132;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.header-mobile-menu__ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.header-mobile-menu__ul li a {
+  text-decoration: none;
+  color: #1c2132;
+  font-size: 18px;
+  font-weight: 500;
+  display: block;
+  padding: 8px 0;
+  transition: color 0.2s ease;
+}
+
+.header-mobile-menu__ul li a:hover {
+  color: #ff7d34;
+}
+
+.header-mobile-menu__btn {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* ============================================
+       DESKTOP MENU
+       ============================================ */
 .header-desktop {
   display: none;
 }
@@ -225,21 +337,70 @@ header {
   display: flex;
   align-items: center;
   gap: 39px;
+  list-style: none;
 }
 
-.header-desktop__ul > li > a {
+.header-desktop__ul li a {
+  text-decoration: none;
   color: #75767f;
+  font-size: 16px;
   transition: color 0.2s ease;
 }
 
-.header-desktop__ul > li > a:hover {
+.header-desktop__ul li a:hover {
   color: #ff7d34;
 }
 
 .header-desktop_btnBetNow {
   display: none;
-  background-color: #fdf0ea;
-  color: #ff7d34;
+}
+
+/* ============================================
+       BUTTON STYLES
+       ============================================ */
+.button-betNow {
+  background-color: #ff7d34;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button-betNow:hover {
+  background-color: #e66a22;
+  transform: translateY(-1px);
+}
+
+/* ============================================
+       DESKTOP BREAKPOINT
+       ============================================ */
+@media (min-width: 1200px) {
+
+
+  .header-mobile-menu {
+    display: none;
+  }
+
+  .header-desktop {
+    display: flex;
+  }
+
+  .header-burger {
+    display: none;
+  }
+
+  .header-desktop_btnBetNow {
+    display: block;
+  }
+}
+
+/* Prevent body scroll when menu is open */
+body.menu-open {
+  overflow: hidden;
 }
 
 /* ============================================
@@ -327,7 +488,7 @@ body {
   flex-shrink: 0;
   background-color: #f5f5f5;
   border-radius: 100px;
-  padding: 12px 20px;
+  padding: 20px 43px;
   font-family: "Inter", monospace;
   font-size: 14px;
   font-weight: 500;
@@ -339,10 +500,6 @@ body {
 .table-of-contents__item:hover {
   background-color: #ff7d34;
   color: white;
-}
-
-.table-of-contents__item {
-  padding: 20px 43px;
 }
 
 /* ============================================
@@ -637,7 +794,11 @@ body {
   margin-bottom: 24px;
   border-radius: 24px;
   text-align: center;
-  padding: 36px;
+  padding: 24px;
+}
+
+.bonusSection > p {
+  font-size: 0.7rem;
 }
 
 .imgBonus {
@@ -660,10 +821,11 @@ body {
 .reasons-section {
   max-width: 1340px;
   margin: 0 auto;
-  padding: 64px 52px;
+  padding: 48px 24px;
   background: #f5f5f5;
   border-radius: 32px;
   text-align: center;
+  margin-bottom: 48px;
 }
 
 .reasons-title {
@@ -845,6 +1007,7 @@ body {
 /* ============================================
    REVIEWS SECTION
    ============================================ */
+/* Reviews Section */
 .reviews-section {
   max-width: 1200px;
   margin: 0 auto;
@@ -889,36 +1052,35 @@ body {
   background: #f5f5f5;
 }
 
+/* Swiper настройки */
 .reviews-swiper {
   overflow: visible;
+  padding: 20px;
 }
 
 .reviews-swiper .swiper-wrapper {
-  align-items: stretch !important;
+  align-items: stretch;
 }
 
 .reviews-swiper .swiper-slide {
-  height: auto !important;
-  display: flex;
+  height: auto;
   width: auto;
 }
 
-/* Review Card - Wide Style */
+/* Карточка — твои стили */
 .review-card {
   background: #f5f5f5;
   border-radius: 20px;
   padding: 20px;
-  width: 100%;
   display: flex;
   flex-direction: row;
-  gap: 20px;
-  align-items: stretch;
-  min-width: 600px;
+  gap: 16px;
+  width: 500px; /* фиксированная ширина для слайда */
 }
 
 .review-card__avatar {
-  width: 272px;
-  height: 320px;
+  width: 120px;
+  height: 120px;
   border-radius: 16px;
   object-fit: cover;
   flex-shrink: 0;
@@ -927,19 +1089,11 @@ body {
 .review-card__content {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  flex: 1;
-  justify-content: center;
-}
-
-.review-card__header {
-  display: flex;
-  flex-direction: column;
   gap: 8px;
 }
 
 .review-card__name {
-  font-family: "Inter", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 20px;
   font-weight: 600;
   color: #191b23;
@@ -961,9 +1115,22 @@ body {
 
 .review-card__text {
   font-family: "Inter", sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 160%;
   color: #75767f;
+}
+
+/* Мобильный — текст снизу */
+@media screen and (max-width: 767px) {
+  .review-card {
+    flex-direction: column;
+    width: 300px;
+  }
+
+  .review-card__avatar {
+    width: 100%;
+    height: 200px;
+  }
 }
 
 /* ============================================
@@ -1002,7 +1169,7 @@ body {
   display: flex;
   flex-wrap: nowrap;
   gap: 16px;
-  width: max-content;
+  max-width: 1340px;
   padding: 0 24px;
 }
 
@@ -1037,6 +1204,7 @@ body {
    ============================================ */
 .app-info-section {
   width: 100%;
+  margin-bottom: 48px;
   padding: 64px 16px;
   background: #0a0a0a;
   border-radius: 32px;
@@ -1118,6 +1286,125 @@ body {
   flex-shrink: 0;
   width: 24px;
   text-align: right;
+}
+
+.howTo {
+  background-color: #f3f4f5;
+  padding: 48px 24px;
+  border-radius: 32px;
+  margin-bottom: 48px;
+}
+
+.howToH2 {
+  font-size: 32px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 24px;
+}
+
+.howToP {
+  margin-bottom: 32px;
+}
+
+/* Карточка */
+.howToArticle {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column; /* мобильный: вертикально */
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.howToArticle:last-child {
+  margin-bottom: 0;
+}
+
+/* Картинка */
+.howToArticle__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f3f4f5;
+  border-radius: 16px;
+  padding: 40px;
+}
+
+.howToArticle__image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Контент */
+.howToArticle__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.howToArticle__content h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #191b23;
+}
+
+.howToArticle__content p {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 160%;
+  color: #75767f;
+}
+
+.howToArticle__content button {
+  width: 100%;
+  max-width: 200px;
+  height: 60px;
+  background-color: #ff7d34;
+  border-radius: 100px;
+  color: #eef0ff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+/* Desktop */
+@media screen and (min-width: 768px) {
+  .howToArticle {
+    flex-direction: row; /* в ряд */
+    align-items: center;
+    padding: 32px;
+  }
+
+  .howToArticle__image {
+    flex: 0 0 40%; /* 40% ширины */
+    max-width: 300px;
+  }
+
+  .howToArticle__content {
+    flex: 1; /* остальное место */
+  }
+
+  /* Реверс - картинка справа */
+  .howToArticle--reverse .howToArticle__image {
+    order: 2;
+  }
+
+  .howToArticle--reverse .howToArticle__content {
+    order: 1;
+  }
+
+  .howToArticle__content button {
+    margin: 0;
+  }
+
+  .howTo {
+    margin-bottom: 100px;
+  }
 }
 
 /* ============================================
@@ -1228,11 +1515,6 @@ body {
     font-size: 52px;
   }
 
-  .review-card {
-    padding: 24px;
-    min-width: 700px;
-  }
-
   .review-card__avatar {
     width: 272px;
     height: 320px;
@@ -1255,7 +1537,7 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
     width: 100%;
-    max-width: 900px;
+    max-width: 1340px;
     padding: 0;
   }
 
@@ -1266,6 +1548,7 @@ body {
 
   .app-info-section {
     padding: 100px 32px;
+    margin-bottom: 100px;
   }
 
   .app-info-title {
@@ -1284,7 +1567,7 @@ body {
 
   .info-row {
     padding: 20px 24px;
-    margin-bottom: 16px;
+    margin-bottom: 4px;
     border-radius: 16px;
   }
 
@@ -1299,6 +1582,43 @@ body {
 
   .info-number {
     font-size: 16px;
+  }
+
+  .bonusSection {
+    padding: 34px;
+  }
+
+  .reviews-nav {
+    display: flex;
+  }
+
+  .howToAside {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .howToAside__AsideH3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 130%;
+  }
+
+  .howToAside__Aside {
+    margin-left: 80px;
+    max-width: 576px;
+    height: fit-content;
+  }
+
+  .howTo__asideBetNow {
+    max-width: 256px;
+  }
+
+  .hotToIMG {
+    margin: 0;
+    width: 100%;
+    object-fit: contain;
   }
 }
 
@@ -1408,17 +1728,124 @@ body {
   .table-of-contents {
     overflow-x: hidden;
   }
+
+  .header-burger{
+    display: none;
+  }
 }
 
-/* Mobile Reviews */
-@media screen and (max-width: 767px) {
-  .review-card {
-    flex-direction: column;
-    min-width: 320px;
-  }
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  background: #1a1919;
+  padding: 20px 32px;
+  display: none;
+}
 
-  .review-card__avatar {
-    width: 100%;
-    height: 200px;
+.footer-container {
+  max-width: 1340px;
+  margin: 0 auto; /* Центрирование */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 39px;
+}
+
+/* Top row: Social слева, Nav справа */
+.footer-top {
+  display: flex;
+  align-items: end;
+  justify-content: space-between; /* Левый блок слева, правый справа */
+  gap: 24px;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  margin-bottom: 12px;
+}
+
+.footer-social__link {
+  width: 32px; /* Размер круга как в Figma */
+  height: 32px;
+  background: #000; /* Чёрный фон */
+  border-radius: 50%; /* Круг */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.footer-social__link:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.footer-social__link img {
+  width: 16px; /* Размер иконки внутри */
+  height: 16px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(100%); /* Белая иконка */
+}
+
+/* Navigation - две строки, прижаты к правому краю */
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end; /* Прижимаем строки навигации к правому краю */
+}
+
+.footer-nav-row {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: flex-end; /* Ссылки внутри строки тоже справа */
+}
+
+.footer-nav__link {
+  color: #75767f;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.footer-nav__link:hover {
+  color: #ff7d34;
+}
+
+/* Bottom row: Текст слева, копирайт справа */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Левый текст слева, копирайт справа */
+  gap: 24px;
+}
+
+.footer-text {
+  display: block;
+  color: #75767f;
+  font-size: 14px;
+}
+
+.footer-copyright {
+  color: #75767f;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* ============================================
+   TABLET & DESKTOP (768px+)
+   ============================================ */
+@media (min-width: 768px) {
+  footer {
+    display: block;
   }
 }

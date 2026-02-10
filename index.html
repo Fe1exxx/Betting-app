@@ -12,23 +12,43 @@
   </head>
   <body>
     <header>
-      <button class="header-section">
+      <a href="#" class="header-section">
         <div class="header-section__logo">IPL</div>
         <h2 class="header-section__title">Betting App</h2>
+      </a>
+
+      <!-- Бургер кнопка -->
+      <button class="header-burger" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
-      <nav class="header-navMobile">
-        <div class="header-burgerMenu"></div>
-        <div class="header-burgerMenu"></div>
-        <div class="header-burgerMenu"></div>
+
+      <!-- Мобильное меню (overlay) -->
+      <nav class="header-mobile-menu">
+        <button class="header-mobile-menu__close" aria-label="Close menu">
+          ×
+        </button>
+        <ul class="header-mobile-menu__ul">
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#Download">IPL Download</a></li>
+          <li><a href="#Bonus">Bonus</a></li>
+          <li><a href="#HowToUse">How to use ?</a></li>
+          <li><a href="#Reviews">Reviews</a></li>
+          <li><a href="#FAQ">FAQ</a></li>
+        </ul>
+        <button class="header-mobile-menu__btn button-betNow">Bet Now</button>
       </nav>
+
+      <!-- Десктоп меню -->
       <nav class="header-desktop">
         <ul class="header-desktop__ul">
           <li><a href="#Home">Home</a></li>
-          <li><a href="#Home">IPL Download</a></li>
-          <li><a href="#Home">Bonus</a></li>
-          <li><a href="#Home">How to use ?</a></li>
-          <li><a href="#Home">Reviews</a></li>
-          <li><a href="#Home">FAQ</a></li>
+          <li><a href="#Download">IPL Download</a></li>
+          <li><a href="#Bonus">Bonus</a></li>
+          <li><a href="#HowToUse">How to use ?</a></li>
+          <li><a href="#Reviews">Reviews</a></li>
+          <li><a href="#FAQ">FAQ</a></li>
         </ul>
       </nav>
       <button class="header-desktop_btnBetNow button-betNow">Bet Now</button>
@@ -116,12 +136,19 @@
               </div>
             </div>
             <div class="ipl-carousel__nav">
-              <button class="ipl-carousel__arrow" onclick="prevSlide()">←</button>
+              <button class="ipl-carousel__arrow" onclick="prevSlide()">
+                ←
+              </button>
               <div class="ipl-carousel__dots">
-                <span class="ipl-carousel__dot active" onclick="goToSlide(0)"></span>
+                <span
+                  class="ipl-carousel__dot active"
+                  onclick="goToSlide(0)"
+                ></span>
                 <span class="ipl-carousel__dot" onclick="goToSlide(1)"></span>
               </div>
-              <button class="ipl-carousel__arrow" onclick="nextSlide()">→</button>
+              <button class="ipl-carousel__arrow" onclick="nextSlide()">
+                →
+              </button>
             </div>
           </div>
         </section>
@@ -143,7 +170,11 @@
           </p>
           <section style="display: flex; gap: 20px" class="gapUp">
             <button>
-              <img src="IMG/Google Play.png" alt="Google play" style="width: 200px" />
+              <img
+                src="IMG/Google Play.png"
+                alt="Google play"
+                style="width: 200px"
+              />
             </button>
             <button>
               <img src="IMG/App Store.png" alt="Apple" style="width: 200px" />
@@ -164,17 +195,29 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="match-card">
-                <div class="match-card__stadium">Rajiv Gandhi International Stadium, Hyderabad</div>
-                <div class="match-card__date">Sunday, May 19 · 17:30 pm IST</div>
+                <div class="match-card__stadium">
+                  Rajiv Gandhi International Stadium, Hyderabad
+                </div>
+                <div class="match-card__date">
+                  Sunday, May 19 · 17:30 pm IST
+                </div>
                 <div class="match-card__teams">
                   <div class="match-card__team">
-                    <img src="IMG/Live/kings.png" alt="Sunrisers" class="match-card__logo" />
+                    <img
+                      src="IMG/Live/kings.png"
+                      alt="Sunrisers"
+                      class="match-card__logo"
+                    />
                     <div class="match-card__team-name">Sunrisers Hyderabad</div>
                     <div class="match-card__odds">(19.1 OV)</div>
                   </div>
                   <div class="match-card__vs">VS</div>
                   <div class="match-card__team">
-                    <img src="IMG/Live/Sunrisers.png" alt="Rajasthan" class="match-card__logo" />
+                    <img
+                      src="IMG/Live/Sunrisers.png"
+                      alt="Rajasthan"
+                      class="match-card__logo"
+                    />
                     <div class="match-card__team-name">Rajasthan Royals</div>
                     <div class="match-card__odds">(19.1 OV)</div>
                   </div>
@@ -185,17 +228,29 @@
             <div class="swiper-slide">
               <div class="match-card">
                 <div class="match-card__stadium">Wankhede Stadium, Mumbai</div>
-                <div class="match-card__date">Monday, May 20 · 20:30 pm IST</div>
+                <div class="match-card__date">
+                  Monday, May 20 · 20:30 pm IST
+                </div>
                 <div class="match-card__teams">
                   <div class="match-card__team">
-                    <img src="IMG/Live/Rajasthan.png" alt="Mumbai" class="match-card__logo" />
+                    <img
+                      src="IMG/Live/Rajasthan.png"
+                      alt="Mumbai"
+                      class="match-card__logo"
+                    />
                     <div class="match-card__team-name">Mumbai Indians</div>
                     <div class="match-card__odds">(19.1 OV)</div>
                   </div>
                   <div class="match-card__vs">VS</div>
                   <div class="match-card__team">
-                    <img src="IMG/Live/Mumbai.png" alt="Kolkata" class="match-card__logo" />
-                    <div class="match-card__team-name">Kolkata Knight Riders</div>
+                    <img
+                      src="IMG/Live/Mumbai.png"
+                      alt="Kolkata"
+                      class="match-card__logo"
+                    />
+                    <div class="match-card__team-name">
+                      Kolkata Knight Riders
+                    </div>
                     <div class="match-card__odds">(19.1 OV)</div>
                   </div>
                 </div>
@@ -205,17 +260,29 @@
             <div class="swiper-slide">
               <div class="match-card">
                 <div class="match-card__stadium">Wankhede Stadium, Mumbai</div>
-                <div class="match-card__date">Monday, May 20 · 20:30 pm IST</div>
+                <div class="match-card__date">
+                  Monday, May 20 · 20:30 pm IST
+                </div>
                 <div class="match-card__teams">
                   <div class="match-card__team">
-                    <img src="IMG/Live/Kolkata.png" alt="Mumbai" class="match-card__logo" />
+                    <img
+                      src="IMG/Live/Kolkata.png"
+                      alt="Mumbai"
+                      class="match-card__logo"
+                    />
                     <div class="match-card__team-name">Mumbai Indians</div>
                     <div class="match-card__odds">(19.1 OV)</div>
                   </div>
                   <div class="match-card__vs">VS</div>
                   <div class="match-card__team">
-                    <img src="IMG/Live/Royal.png" alt="Kolkata" class="match-card__logo" />
-                    <div class="match-card__team-name">Kolkata Knight Riders</div>
+                    <img
+                      src="IMG/Live/Royal.png"
+                      alt="Kolkata"
+                      class="match-card__logo"
+                    />
+                    <div class="match-card__team-name">
+                      Kolkata Knight Riders
+                    </div>
                     <div class="match-card__odds">(19.1 OV)</div>
                   </div>
                 </div>
@@ -240,22 +307,41 @@
             <div class="bgImgRounded imgBonus">
               <img src="IMG/Money.png" alt="Money" class="imgBonus" />
             </div>
-            <h3 style="color: #fcfdfe; font-weight: 700">Received 10 free spins</h3>
-            <p>Get started with a free bet worth $10 upon registration! No deposit required. Start winning today!</p>
+            <h3 style="color: #fcfdfe; font-weight: 700">
+              Received 10 free spins
+            </h3>
+            <p>
+              Get started with a free bet worth $10 upon registration! No
+              deposit required. Start winning today!
+            </p>
           </div>
           <div class="bonusSection">
             <div class="bgImgRounded imgBonus">
               <img src="IMG/gift.png" alt="gift" class="imgBonus" />
             </div>
-            <h3 style="color: #fcfdfe; font-weight: 700">Deposit of 100 dollars</h3>
-            <p>Make your first deposit of $100 and unlock a 100% match bonus. Boost your money into IPL betting action!</p>
+            <h3 style="color: #fcfdfe; font-weight: 700">
+              Deposit of 100 dollars
+            </h3>
+            <p>
+              Make your first deposit of $100 and unlock a 100% match bonus.
+              Boost your money into IPL betting action!
+            </p>
           </div>
           <div class="bonusSection">
             <div class="bgImgRounded imgBonus">
-              <img src="IMG/Circle money.png" alt="Circle Money" class="imgBonus" />
+              <img
+                src="IMG/Circle money.png"
+                alt="Circle Money"
+                class="imgBonus"
+              />
             </div>
-            <h3 style="color: #fcfdfe; font-weight: 700">50% Bonus on First Deposit</h3>
-            <p>Enjoy a 50% bonus on your initial deposit up to $200. Maximize your first bet of IPL betting!</p>
+            <h3 style="color: #fcfdfe; font-weight: 700">
+              50% Bonus on First Deposit
+            </h3>
+            <p>
+              Enjoy a 50% bonus on your initial deposit up to $200. Maximize
+              your first bet of IPL betting!
+            </p>
           </div>
         </article>
       </section>
@@ -265,7 +351,9 @@
         <div class="reasons-list">
           <div class="reasons-item">
             <div class="reasons-item__header">
-              <h3 class="reasons-item__title">Cricket Betting App without your browser</h3>
+              <h3 class="reasons-item__title">
+                Cricket Betting App without your browser
+              </h3>
               <button class="reasons-item__toggle">+</button>
             </div>
             <p class="reasons-item__text">
@@ -359,7 +447,9 @@
           </div>
           <div class="reasons-item">
             <div class="reasons-item__header">
-              <h3 class="reasons-item__title">How to deposit money in the app?</h3>
+              <h3 class="reasons-item__title">
+                How to deposit money in the app?
+              </h3>
               <button class="reasons-item__toggle">+</button>
             </div>
             <p class="reasons-item__text">
@@ -372,7 +462,9 @@
           </div>
           <div class="reasons-item">
             <div class="reasons-item__header">
-              <h3 class="reasons-item__title">How to find IPL matches to bet?</h3>
+              <h3 class="reasons-item__title">
+                How to find IPL matches to bet?
+              </h3>
               <button class="reasons-item__toggle">+</button>
             </div>
             <p class="reasons-item__text">
@@ -398,79 +490,91 @@
         <button class="reasons-button">Learn More</button>
       </section>
 
-      <section class="reviews-section">
-        <div class="reviews-header">
-          <h2 class="reviews-title">IPL Betting App Reviews</h2>
-          <div class="reviews-nav">
-            <button class="reviews-arrow reviews-arrow--prev">←</button>
-            <button class="reviews-arrow reviews-arrow--next">→</button>
-          </div>
-        </div>
-        <div class="swiper reviews-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="review-card">
-                <img src="IMG/UserFeedback.png" alt="Rajesh K" class="review-card__avatar" />
-                <div class="review-card__content">
-                  <div class="review-card__header">
-                    <h3 class="review-card__name">Rajesh K</h3>
-                    <div class="review-card__stars">
-                      <span>★</span><span>★</span><span>★</span><span>★</span><span class="star-empty">★</span>
-                    </div>
-                  </div>
-                  <p class="review-card__text">
-                    I've tried several betting apps, but this one stands out. The
-                    live betting feature is excellent, and the customer support is
-                    responsive. Great bonuses too. Very satisfied!
-                  </p>
+      <div class="swiper reviews-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="review-card">
+              <img
+                src="IMG/UserFeedback.png"
+                alt="Rajesh K"
+                class="review-card__avatar"
+              />
+              <div class="review-card__content">
+                <h3 class="review-card__name">Rajesh K</h3>
+                <div class="review-card__stars">
+                  <span>★</span><span>★</span><span>★</span><span>★</span
+                  ><span class="star-empty">★</span>
                 </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="review-card">
-                <img src="IMG/UserFeedback2.png" alt="Priya S" class="review-card__avatar" />
-                <div class="review-card__content">
-                  <div class="review-card__header">
-                    <h3 class="review-card__name">Priya S</h3>
-                    <div class="review-card__stars">
-                      <span>★</span><span>★</span><span>★</span><span>★</span><span class="star-empty">★</span>
-                    </div>
-                  </div>
-                  <p class="review-card__text">
-                    The IPL betting experience here is top-notch. Fast payouts and
-                    easy to use interface. Highly recommended for cricket fans!
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="review-card">
-                <img src="IMG/UserFeedback.png" alt="Amit M" class="review-card__avatar" />
-                <div class="review-card__content">
-                  <div class="review-card__header">
-                    <h3 class="review-card__name">Amit M</h3>
-                    <div class="review-card__stars">
-                      <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                    </div>
-                  </div>
-                  <p class="review-card__text">
-                    Amazing app! The odds are competitive and the live streaming
-                    feature works perfectly. Best betting app I've used so far.
-                  </p>
-                </div>
+                <p class="review-card__text">
+                  I've tried several betting apps, but this one stands out. The
+                  live betting feature is excellent, and the customer support is
+                  responsive. Great bonuses too. Very satisfied!
+                </p>
               </div>
             </div>
           </div>
+
+          <div class="swiper-slide">
+            <div class="review-card">
+              <img
+                src="IMG/UserFeedback2.png"
+                alt="Priya S"
+                class="review-card__avatar"
+              />
+              <div class="review-card__content">
+                <h3 class="review-card__name">Priya S</h3>
+                <div class="review-card__stars">
+                  <span>★</span><span>★</span><span>★</span><span>★</span
+                  ><span class="star-empty">★</span>
+                </div>
+                <p class="review-card__text">
+                  The IPL betting experience here is top-notch. Fast payouts and
+                  easy to use interface. Highly recommended for cricket fans!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="review-card">
+              <img
+                src="IMG/UserFeedback.png"
+                alt="Amit M"
+                class="review-card__avatar"
+              />
+              <div class="review-card__content">
+                <h3 class="review-card__name">Amit M</h3>
+                <div class="review-card__stars">
+                  <span>★</span><span>★</span><span>★</span><span>★</span
+                  ><span>★</span>
+                </div>
+                <p class="review-card__text">
+                  Amazing app! The odds are competitive and the live streaming
+                  feature works perfectly. Best betting app I've used so far.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
 
       <section class="download-section">
-        <h2 class="download-title">Download IPL win app <br />for Android & iOS</h2>
+        <h2 class="download-title">
+          Download IPL win app <br />for Android & iOS
+        </h2>
         <div class="brands-scroll">
           <div class="brands-track">
             <div class="brand-item">
-              <img src="IMG/Brands/Huawei.png" alt="Huawei" style="width: 40px" />
-              <img src="IMG/Brands/Huawei2.png" alt="Huawei2" style="width: 74px; margin-left: 10px" />
+              <img
+                src="IMG/Brands/Huawei.png"
+                alt="Huawei"
+                style="width: 40px"
+              />
+              <img
+                src="IMG/Brands/Huawei2.png"
+                alt="Huawei2"
+                style="width: 74px; margin-left: 10px"
+              />
             </div>
             <div class="brand-item">
               <img src="IMG/Brands/Samsung.png" alt="Samsung" />
@@ -484,8 +588,16 @@
           </div>
           <div class="brands-track" style="margin-top: 20px">
             <div class="brand-item">
-              <img src="IMG/Brands/xiaomi1.png" alt="Xiaomi" style="width: 40px" />
-              <img src="IMG/Brands/xiaomi2.png" alt="Xiaomi2" style="width: 74px; margin-left: 10px" />
+              <img
+                src="IMG/Brands/xiaomi1.png"
+                alt="Xiaomi"
+                style="width: 40px"
+              />
+              <img
+                src="IMG/Brands/xiaomi2.png"
+                alt="Xiaomi2"
+                style="width: 74px; margin-left: 10px"
+              />
             </div>
             <div class="brand-item">
               <img src="IMG/Brands/apple.png" alt="Apple" />
@@ -518,7 +630,9 @@
                 </div>
                 <div class="info-row">
                   <span class="info-label">Language</span>
-                  <span class="info-value">English, Hindi, Bengal, Telugu, Marathi, Tamil</span>
+                  <span class="info-value"
+                    >English, Hindi, Bengal, Telugu, Marathi, Tamil</span
+                  >
                   <span class="info-number">3</span>
                 </div>
                 <div class="info-row">
@@ -541,7 +655,153 @@
           </div>
         </div>
       </section>
+
+      <section class="howTo">
+        <h2 class="howToH2">How to download the IPL prediction app?</h2>
+        <p class="howToP">
+          The IPL betting app offers a user-friendly mobile interface that
+          allows users to place bets anytime, anywhere. Enjoy features like
+          secure transactions, detailed match
+        </p>
+
+        <!-- Android - картинка слева -->
+        <article class="howToArticle">
+          <div class="howToArticle__image">
+            <img src="IMG/downolandAndAndroid.png" alt="Download Android app" />
+          </div>
+          <div class="howToArticle__content">
+            <h3>How to download betting app on android?</h3>
+            <p>
+              The IPL betting app offers a user-friendly mobile interface that
+              allows users to place bets anytime, anywhere. Enjoy features like
+              secure transactions, detailed match statistics and personalized
+              notifications for an immersive and hassle-free betting experience
+              on the go.
+            </p>
+            <button>Bet Now</button>
+          </div>
+        </article>
+
+        <!-- iOS - картинка справа (реверс) -->
+        <article class="howToArticle howToArticle--reverse">
+          <div class="howToArticle__image">
+            <img src="IMG/appleAndDownoland.png" alt="Download iOS app" />
+          </div>
+          <div class="howToArticle__content">
+            <h3>How to download an online ipl cricket app on iOS?</h3>
+            <p>
+              All you have to do is just open the site on your phone. Sign up,
+              confirm, and you are ready to place the bets.
+            </p>
+            <button>Bet Now</button>
+          </div>
+        </article>
+      </section>
+
+      <section class="reasons-section">
+        <h2 class="reasons-title">FAQ</h2>
+        <div class="reasons-list">
+          <div class="reasons-item">
+            <div class="reasons-item__header">
+              <h3 class="reasons-item__title">How to sign up in the app?</h3>
+              <button class="reasons-item__toggle">+</button>
+            </div>
+            <p class="reasons-item__text">
+              Click on the app. Next, fill out the two-step registration form.
+              Enter your phone number and create your password. A code will be
+              sent to your phone. Verify by entering this code. Click “Next” and
+              you are ready for online betting.
+            </p>
+          </div>
+          <div class="reasons-item">
+            <div class="reasons-item__header">
+              <h3 class="reasons-item__title">How to sign up in the app?</h3>
+              <button class="reasons-item__toggle">+</button>
+            </div>
+            <p class="reasons-item__text">
+              Click on the app. Next, fill out the two-step registration form.
+              Enter your phone number and create your password. A code will be
+              sent to your phone. Verify by entering this code. Click “Next” and
+              you are ready for online betting.
+            </p>
+          </div>
+          <div class="reasons-item">
+            <div class="reasons-item__header">
+              <h3 class="reasons-item__title">How to sign up in the app?</h3>
+              <button class="reasons-item__toggle">+</button>
+            </div>
+            <p class="reasons-item__text">
+              Click on the app. Next, fill out the two-step registration form.
+              Enter your phone number and create your password. A code will be
+              sent to your phone. Verify by entering this code. Click “Next” and
+              you are ready for online betting.
+            </p>
+          </div>
+          <div class="reasons-item">
+            <div class="reasons-item__header">
+              <h3 class="reasons-item__title">How to sign up in the app?</h3>
+              <button class="reasons-item__toggle">+</button>
+            </div>
+            <p class="reasons-item__text">
+              Click on the app. Next, fill out the two-step registration form.
+              Enter your phone number and create your password. A code will be
+              sent to your phone. Verify by entering this code. Click “Next” and
+              you are ready for online betting.
+            </p>
+          </div>
+        </div>
+        <button class="reasons-button">Learn More</button>
+      </section>
     </main>
+
+  <footer>
+  <div class="footer-container">
+    <!-- Top row -->
+    <div class="footer-top">
+      <!-- Social Icons - видны только от 768px -->
+      <div>
+        <div class="footer-social">
+          <a href="#" class="footer-social__link" aria-label="Facebook">
+            <img src="IMG/iconsSocial/facebook.png" alt="Facebook" />
+          </a>
+          <a href="#" class="footer-social__link" aria-label="Telegram">
+            <img src="IMG/iconsSocial/telegram.png" alt="Telegram" />
+          </a>
+          <a href="#" class="footer-social__link" aria-label="Twitter">
+            <img src="IMG/iconsSocial/twitter.png" alt="Twitter" />
+          </a>
+          <a href="#" class="footer-social__link" aria-label="Instagram">
+            <img src="IMG/iconsSocial/instagram.png" alt="Instagram" />
+          </a>
+        </div>
+        <p>Best betting in India Lorem ipsum dolor sit amet</p>
+      </div>
+
+      <!-- Navigation - две строки как в Figma -->
+      <nav class="footer-nav">
+        <div class="footer-nav-row">
+          <a href="#" class="footer-nav__link">Odds96</a>
+          <a href="#" class="footer-nav__link">Casino</a>
+          <a href="#" class="footer-nav__link">Aviator</a>
+          <a href="#" class="footer-nav__link">Cricket</a>
+          <a href="#" class="footer-nav__link">Bonuses</a>
+          <a href="#" class="footer-nav__link">App</a>
+        </div>
+        <div class="footer-nav-row">
+          <a href="#" class="footer-nav__link">Reviews</a>
+          <a href="#" class="footer-nav__link">Legal</a>
+          <a href="#" class="footer-nav__link">Support</a>
+          <a href="#" class="footer-nav__link">Help</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Bottom row
+    <div class="footer-bottom">
+      <div class="footer-text"></div>
+    </div> -->
+  </div>
+</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="main.js"></script>

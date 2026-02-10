@@ -1,11 +1,14 @@
-// Mobile menu functionality
+// ============================================
+// MOBILE MENU
+// ============================================
+
 const burger = document.querySelector('.header-burger');
 const mobileMenu = document.querySelector('.header-mobile-menu');
 const menuLinks = document.querySelectorAll('.header-mobile-menu__ul li a');
 const betNowBtn = document.querySelector('.header-mobile-menu__btn');
 const body = document.body;
 
-// Защита (на будущее)
+// Защита 
 if (!burger || !mobileMenu) {
   console.warn('Mobile menu elements not found');
 } else {
@@ -31,12 +34,10 @@ if (!burger || !mobileMenu) {
     }
   });
 
-  // Ссылки меню
   menuLinks.forEach(link => {
     link.addEventListener('click', closeMenu);
   });
 
-  // Кнопка Bet Now
   if (betNowBtn) {
     betNowBtn.addEventListener('click', closeMenu);
   }
@@ -53,7 +54,6 @@ if (!burger || !mobileMenu) {
     }
   });
 
-  // Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
       closeMenu();
@@ -61,7 +61,9 @@ if (!burger || !mobileMenu) {
   });
 }
 
-
+// ============================================
+// IPL CAROUSEL (custom)
+// ============================================
 
 let currentSlide = 0;
 const track = document.getElementById('carouselTrack');
@@ -90,7 +92,6 @@ function goToSlide(index) {
   updateCarousel();
 }
 
-// Свайп для мобильных
 let startX = 0;
 track.addEventListener('touchstart', (e) => {
   startX = e.touches[0].clientX;
@@ -102,7 +103,9 @@ track.addEventListener('touchend', (e) => {
   if (endX - startX > 50) prevSlide();
 });
 
-
+// ============================================
+// SWIPER: MATCHES
+// ============================================
 
 const swiper = new Swiper('.matches-swiper', {
   slidesPerView: 'auto',
@@ -135,6 +138,23 @@ const swiper = new Swiper('.matches-swiper', {
   }
 });
 
+// ============================================
+// SWIPER: REVIEWS
+// ============================================
+
+const reviewsSwiper = new Swiper('.reviews-swiper', {
+  slidesPerView: 'auto',
+  spaceBetween: 20,
+  loop: true,
+  navigation: {
+    nextEl: '.reviews-arrow--next',
+    prevEl: '.reviews-arrow--prev',
+  },
+});
+
+// ============================================
+// FAQ TOGGLE (Reasons Section)
+// ============================================
 
 document.querySelectorAll('.reasons-item__toggle').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -146,30 +166,19 @@ document.querySelectorAll('.reasons-item__toggle').forEach(btn => {
   });
 });
 
+// Основной обработчик — клик по всей карточке
 document.querySelectorAll('.reasons-item').forEach(item => {
   item.addEventListener('click', function (e) {
-    // Не реагируем, если кликнута ссылка или интерактивный элемент внутри
     if (e.target.closest('.reasons-item__toggle') || e.target.tagName === 'A') return;
 
     const text = this.querySelector('.reasons-item__text');
     const toggleBtn = this.querySelector('.reasons-item__toggle');
 
-    // Переключаем видимость
     const isVisible = getComputedStyle(text).display === 'block';   
     text.style.display = isVisible ? 'none' : 'block';
     
-    // Меняем символ в кнопке
     toggleBtn.textContent = isVisible ? '+' : '−';
   });
 });
 
 
-const reviewsSwiper = new Swiper('.reviews-swiper', {
-  slidesPerView: 'auto',
-  spaceBetween: 20,
-  loop: true,
-  navigation: {
-    nextEl: '.reviews-arrow--next',
-    prevEl: '.reviews-arrow--prev',
-  },
-});

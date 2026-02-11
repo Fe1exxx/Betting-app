@@ -154,8 +154,8 @@ p {
   border: none;
 }
 
-.header-mobile-menu > .button-betNow{
-margin: auto auto;
+.header-mobile-menu > .button-betNow {
+  margin: auto auto;
 }
 
 /* ============================================
@@ -1064,8 +1064,6 @@ body {
   line-height: 160%;
   color: #75767f;
 }
-
-
 
 /* ============================================
    DOWNLOAD SECTION

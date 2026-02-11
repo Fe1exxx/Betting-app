@@ -154,6 +154,10 @@ p {
   border: none;
 }
 
+.header-mobile-menu > .button-betNow{
+margin: auto auto;
+}
+
 /* ============================================
    HEADER
    ============================================ */

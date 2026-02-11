@@ -42,17 +42,7 @@ if (!burger || !mobileMenu) {
     betNowBtn.addEventListener('click', closeMenu);
   }
 
-  // Закрытие по клику вне меню или бургера
-  document.addEventListener('click', (e) => {
-    if (!mobileMenu.classList.contains('active')) return;
 
-    const clickedInsideMenu = e.target.closest('.header-mobile-menu');
-    const clickedInsideBurger = e.target.closest('.header-burger');
-
-    if (!clickedInsideMenu && !clickedInsideBurger) {
-      closeMenu();
-    }
-  });
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
